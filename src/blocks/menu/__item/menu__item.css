@@ -1,0 +1,7 @@
+.menu__item {
+  margin: 0 15px 0 0;
+}
+
+.menu__item:last-of-type {
+  margin: 0;
+}

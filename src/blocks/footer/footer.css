@@ -1,0 +1,17 @@
+@import url('./__copyright/footer__copyright.css');
+@import url('./__menu/footer__menu.css');
+@import url('./__menu-item/footer__menu-item.css');
+@import url('./__link/footer__link.css');
+@import url('./__link/_type/footer__link_type_social-icon.css');
+@import url('./__link/_type/footer__link_type_github.css');
+@import url('./__link/_type/footer__link_type_telegram.css');
+@import url('./__link/_type/footer__link_type_linkedin.css');
+
+.footer {
+  margin: 0;
+  padding: 10px 30px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

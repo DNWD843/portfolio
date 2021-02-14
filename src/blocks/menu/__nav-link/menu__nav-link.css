@@ -1,0 +1,10 @@
+.menu__nav-link {
+  color: rgba(200, 200, 190, 0.7);
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.menu__nav-link:hover {
+  color: rgba(200, 200, 190, 1);
+  text-shadow: 0 0 2px #fff;
+}
