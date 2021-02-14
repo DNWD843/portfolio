@@ -1,0 +1,13 @@
+.footer__link_type_social-icon {
+  width: 24px;
+  height: 24px;
+  background-size: cover;
+  background-position: center;
+  background-color: rgba(200, 200, 190, 0.7);
+  border-radius: 50%;
+}
+
+.footer__link_type_social-icon:hover {
+  background-color: rgba(200, 200, 190, 1);
+  box-shadow: 0 0 10px #fff;
+}
