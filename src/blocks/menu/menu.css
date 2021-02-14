@@ -1,0 +1,9 @@
+@import url('./__links-list/menu__links-list.css');
+@import url('./__item/menu__item.css');
+@import url('./__nav-link/menu__nav-link.css');
+@import url('./__nav-link/_active/menu__nav-link_active.css');
+
+.menu {
+  margin: 0;
+  padding: 0;
+}
