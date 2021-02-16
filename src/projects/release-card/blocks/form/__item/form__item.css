@@ -1,0 +1,196 @@
+.form__item {
+  display: inline-block;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: bold;
+  width: 10%;
+  height: 36px;
+  box-sizing: border-box;
+  border: 0;
+  padding: 8px 15px;
+  margin: 20px 31px 20px 0;
+  border-bottom: 1px solid #a3a3a2;
+  box-shadow: 0 2px 0 -1px #a3a2a2;
+  z-index: 1;
+  /*Этот код отключает дефолтную подсветку инпутов синим цветом*/
+  -webkit-box-shadow: none;
+  outline: -webkit-focus-ring-color auto 0px;
+}
+
+.form__item[type="checkbox"] {
+  display: block;
+  width: 20px;
+  height: 20px;
+  margin-right: 20px;
+}
+
+.form__item:focus[type="checkbox"] {
+  box-shadow: none;
+  border: 1px solid #a3a2a2;
+}
+
+.form__item[type="radio"] {
+  display: block;
+  box-shadow: none;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+.form__item[type="select"] {
+  margin-right: 600px;
+  padding-right: 0;
+}
+
+
+/*скрываю плэйсхолдеры, но оставляю их по факту, чтобы они попали в запрос на сервер*/
+
+.form__item::placeholder {
+  opacity: 0;
+}
+
+.form__item:focus {
+  box-shadow: 0 4px 0 -1px #a3a2a2;
+}
+
+
+/* этот код фиксирует плэйсхолдер вверху, если текст введен (поле не пусто).
+т.е. поле "валидно" или "невалидно", при этом контролирует отсутствие плэйсхолдера в поле, т.е. что-то введено и реальный
+плэйсхолдер исчез, а псевдоплэйсхолдер ушел наверх*/
+
+.form__item:focus:not([type="checkbox"])+.form__label,
+.form__item:valid:not([type="checkbox"])+.form__label,
+.form__item:valid:not(:placeholder-shown)+.form__label,
+.form__item:invalid:not(:placeholder-shown)+.form__label {
+  left: 15px;
+  top: 5px;
+  font-size: 60%;
+}
+
+
+/*================================================================================*/
+
+
+/*этот код подсвечивает поле красным, когда поле невалидно,
+но наличие плэйсхолдера(а он есть, но скрыт) не делает поле невалидным*/
+
+.form__item:invalid:not(:placeholder-shown) {
+  box-shadow: 0 2px 0 -1px #ed1414;
+}
+
+.form__item:invalid:not(:placeholder-shown)+.form__label+span::before {
+  position: absolute;
+  right: -5px;
+  top: 30px;
+}
+
+
+/* этот код добавляет красный крест справа когда поле невалидно,
+и зеленую галочку когда поле валидно (заполнено)
+При этом наличие плэйсхолдера в инпуте (а он есть, но скрыт) не считается "инвалид" */
+
+.form__item:invalid:not(:placeholder-shown)+.form__label+span::before {
+  content: 'X';
+  color: #ed1414;
+  font-weight: bold;
+}
+
+.form__item:valid+.form__label+span::before {
+  content: '√';
+  font-weight: bold;
+  color: green;
+  position: absolute;
+  right: 0px;
+  top: 30px;
+}
+
+
+/*=================================================================================*/
+
+
+/****************************************************************************************************/
+
+
+/****************************************************************************************************/
+
+
+/* Ниже стилизую галочку на карточках при выборе карточек и блюр на выбранной карточке*/
+
+
+/* Это фиксация зеленой рамки при наведении мышки на карту и при выборе карты */
+
+.form__pseudo-card:hover::before,
+.form__item:checked[type="radio"]+.form__pseudo-card::before {
+  display: block;
+  position: absolute;
+  width: 172px;
+  height: 109px;
+  content: '';
+  border: 4px solid #60c84a;
+  top: -4px;
+  left: -4px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+
+/* Это фиксация зеленой рамки при наведении мышки на невидимую пока галочку и при выборе карты чтобы рамка
+не исчезала после отвода курсора от галочки */
+
+.form__checked-sign:hover::before,
+.form__item:checked[type="radio"]+.form__pseudo-card+.form__checked-sign::before {
+  display: block;
+  position: absolute;
+  width: 172px;
+  height: 109px;
+  content: '';
+  border: 4px solid #60c84a;
+  top: -24px;
+  left: -54px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+
+/* Это блюр на выбранной карте */
+
+.form__item:checked[type="radio"]+.form__pseudo-card {
+  opacity: .4;
+}
+
+
+/* Тут карта выбрана и отмечена галочкой. Так сделано, чтобы галочка не попала под блюр */
+
+.form__item:checked[type="radio"]+.form__pseudo-card_el_business+.form__checked-sign,
+.form__item:checked[type="radio"]+.form__pseudo-card_el_business-no-name+.form__checked-sign {
+  background-image: url(../../../images/галочка.png);
+}
+
+
+/*****************************************************************************************************************/
+
+
+/************************************************************************************************/
+
+
+/* Тут я проверяю правильность заполнения полей (паттерны смотри в html) и вывожу подсказку как заполнить */
+
+.form__item:invalid:not(:placeholder-shown)+.form__label+span+.form__error {
+  display: block;
+}
+
+.form__error {
+  color: red;
+  text-align: left;
+  font-size: 12px;
+  display: none;
+  content: '';
+  position: absolute;
+  top: 65px;
+  left: 0;
+}
+
+
+/***************************************************************************************************/

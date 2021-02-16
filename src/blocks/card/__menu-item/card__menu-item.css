@@ -1,0 +1,5 @@
+.card__menu-item {
+  margin: 0 0 10px;
+  display: flex;
+  justify-content: center;
+}

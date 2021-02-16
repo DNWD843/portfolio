@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CANVAS РИСОВАЛКА</title>
+</head>
+
+<body>
+    <canvas id="canvas" width="1920" height="1080"></canvas>
+    <script src="https://code.jquery.com/jquery-2.1.0.js"></script>
+
+    <script>
+        var canvas = document.getElementById("canvas");
+        var ctx = canvas.getContext("2d");
+        ctx.strokeStyle = "black";
+        ctx.strokeWidth = 3;
+        ctx.lineWidth = 5;
+        //задаем поле для оранжевого цвета
+        ctx.strokeRect(50, 2, 40, 38);
+        ctx.fillStyle = "orange";
+        ctx.fillRect(50, 2, 40, 38);
+
+        //задаем поле для черного цвета
+        ctx.strokeRect(50, 50, 40, 40);
+        ctx.fillStyle = "black";
+        ctx.fillRect(50, 50, 40, 40);
+
+        //задаем поле для красного цвета
+        ctx.strokeRect(50, 100, 40, 40);
+        ctx.fillStyle = "red";
+        ctx.fillRect(50, 100, 40, 40);
+
+        //задаем поле для синего цвета
+        ctx.strokeRect(50, 150, 40, 40);
+        ctx.fillStyle = "blue";
+        ctx.fillRect(50, 150, 40, 40);
+
+        //задаем поле для желтого цвета
+        ctx.strokeRect(50, 200, 40, 40);
+        ctx.fillStyle = "yellow";
+        ctx.fillRect(50, 200, 40, 40);
+
+        //задаем поле для зеленого цвета
+        ctx.strokeRect(50, 250, 40, 40);
+        ctx.fillStyle = "green";
+        ctx.fillRect(50, 250, 40, 40);
+
+        //задаем поле для коричневого цвета
+        ctx.strokeRect(50, 300, 40, 40);
+        ctx.fillStyle = "brown";
+        ctx.fillRect(50, 300, 40, 40);
+
+        //задаем поле для белого цвета
+        ctx.strokeRect(50, 350, 40, 40);
+        ctx.fillStyle = "white";
+        ctx.fillRect(50, 350, 40, 40);
+
+        //задаем поле для фиолетового цвета
+        ctx.strokeRect(50, 400, 40, 40);
+        ctx.fillStyle = "violet";
+        ctx.fillRect(50, 400, 40, 40);
+
+        //задаем поле для серого цвета
+        ctx.strokeRect(50, 450, 40, 40);
+        ctx.fillStyle = "grey";
+        ctx.fillRect(50, 450, 40, 40);
+
+        //задаем поле для бирюзового цвета
+        ctx.strokeRect(50, 500, 40, 40);
+        ctx.fillStyle = "turquoise";
+        ctx.fillRect(50, 500, 40, 40);
+
+        //задаем поле для пурпурного цвета
+        ctx.strokeRect(50, 550, 40, 40);
+        ctx.fillStyle = "purple";
+        ctx.fillRect(50, 550, 40, 40);
+
+        //задаем поле для розового цвета
+        ctx.strokeRect(50, 600, 40, 40);
+        ctx.fillStyle = "pink";
+        ctx.fillRect(50, 600, 40, 40);
+
+        //задаем поле для светло-зеленого цвета
+        ctx.strokeRect(50, 650, 40, 40);
+        ctx.fillStyle = "palegreen";
+        ctx.fillRect(50, 650, 40, 40);
+
+        var clickCounter = 0;
+        var y = 50;
+        var strokeColor = "black";
+
+        //создаю массив цветов
+        var colors = ["orange",
+            "black",
+            "red",
+            "blue",
+            "yellow",
+            "green",
+            "brown",
+            "white",
+            "violet",
+            "grey",
+            "turquoise",
+            "purple",
+            "pink",
+            "palegreen"
+        ];
+
+        //создаем функцию рисования за курсором
+        function paint() {
+            ctx.strokeStyle = strokeColor;
+            ctx.moveTo(event.pageX, event.pageY);
+            ctx.arc(event.pageX, event.pageY, 2, 0, Math.PI * 2, false);
+        };
+
+        //привязываемся к курсору и, если был клик - рисуем
+        //если наехали на поле смены цвета - рисование прекращается (обнуляется счетчик кликов)
+        $("html").mousemove(function(event) {
+            if ((event.pageX > 50) && (event.pageX < 90) && (event.pageY > 2) && (event.pageY < 690)) {
+                clickCounter = 0;
+            };
+
+            if (clickCounter === 1) {
+                ctx.beginPath();
+                paint();
+                ctx.stroke();
+            };
+        });
+        //меняем цвет пера, если был клик в поле смены цвета
+        //контролируем клики: если был 1 клик - прибавляем счетчик кликов (рисуем), 
+        //если второй клик -обнуляем счетчик кликов (не рисуем)
+        $("html").click(function(event) {
+            if ((event.pageX > 50) && (event.pageX < 90) && (event.pageY > 2) && (event.pageY < 40)) {
+                strokeColor = "orange";
+            };
+            if ((event.pageX > 50) && (event.pageX < 90) && (event.pageY > 50) && (event.pageY < 90)) {
+                strokeColor = "black";
+            };
+            if ((event.pageX > 50) && (event.pageX < 90) && (event.pageY > 100) && (event.pageY < 140)) {
+                strokeColor = "red";
+            };
+            if ((event.pageX > 50) && (event.pageX < 90) && (event.pageY > 150) && (event.pageY < 190)) {
+                strokeColor = "blue";
+            };
+            if ((event.pageX > 50) && (event.pageX < 90) && (event.pageY > 200) && (event.pageY < 240)) {
+                strokeColor = "yellow";
+            };
+            if ((event.pageX > 50) && (event.pageX < 90) && (event.pageY > 250) && (event.pageY < 290)) {
+                strokeColor = "green";
+            };
+            if ((event.pageX > 50) && (event.pageX < 90) && (event.pageY > 300) && (event.pageY < 340)) {
+                strokeColor = "brown";
+            };
+            if ((event.pageX > 50) && (event.pageX < 90) && (event.pageY > 350) && (event.pageY < 390)) {
+                strokeColor = "white";
+            };
+            if ((event.pageX > 50) && (event.pageX < 90) && (event.pageY > 400) && (event.pageY < 440)) {
+                strokeColor = "violet";
+            };
+            if ((event.pageX > 50) && (event.pageX < 90) && (event.pageY > 450) && (event.pageY < 490)) {
+                strokeColor = "grey";
+            };
+            if ((event.pageX > 50) && (event.pageX < 90) && (event.pageY > 500) && (event.pageY < 540)) {
+                strokeColor = "turquoise";
+            };
+            if ((event.pageX > 50) && (event.pageX < 90) && (event.pageY > 550) && (event.pageY < 590)) {
+                strokeColor = "purple";
+            };
+            if ((event.pageX > 50) && (event.pageX < 90) && (event.pageY > 600) && (event.pageY < 640)) {
+                strokeColor = "pink";
+            };
+            if ((event.pageX > 50) && (event.pageX < 90) && (event.pageY > 650) && (event.pageY < 690)) {
+                strokeColor = "palegreen";
+            };
+
+            if (clickCounter > 1) {
+                clickCounter = 0;
+            };
+            clickCounter += 1;
+        });
+    </script>
+</body>
+
+</html>

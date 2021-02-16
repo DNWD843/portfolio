@@ -1,0 +1,47 @@
+@import url(./__container/form__container.css);
+@import url(./__title/form__title.css);
+@import url(./__elem/form__elem.css);
+@import url(./__heading/form__heading.css);
+@import url(./__input/form__input.css);
+@import url(./__input/_text/form__input_text_heading.css);
+@import url(./__input-link/form__input-link.css);
+@import url(./__cards-select/form__cards-select.css);
+@import url(./__card/form__card.css);
+@import url(./__pseudo-card/form__pseudo-card.css);
+@import url(./__pseudo-card/_el/form_pseudo-card_el_business.css);
+@import url(./__pseudo-card/_el/form__pseudo-card_el_business-no-name.css);
+@import url(./__checked-sign/form__checked-sign.css);
+@import url(./__cards-params-list/form__cards-params-list.css);
+@import url(./__label/form__label.css);
+@import url(./__label/_type/form__label_type_common.css);
+@import url(./__label/form__label-checkbox.css);
+@import url(./__label/_type/form__label_type_radio.css);
+@import url(./__label/_type/form__label_type_black.css);
+@import url(./__item/form__item.css);
+@import url(./__inner-element/form__inner-element.css);
+@import url(./__item/_size/form__item_size_3col.css);
+@import url(./__item/_size/form__item_size_4col.css);
+@import url(./__item/_size/form__item_size_4-5col.css);
+@import url(./__item/_size/form__item_size_5col.css);
+@import url(./__item/_size/form__item_size_6col.css);
+@import url(./__item/_size/form__item_size_6-5col.css);
+@import url(./__item/_size/form__item_size_7col.css);
+@import url(./__item/_size/form__item_size_8col.css);
+@import url(./__item/_size/form__item_size_8-3col.css);
+@import url(./__item/_size/form__item_size_10col.css);
+@import url(./__item/_size/form__item_size_13col.css);
+@import url(./__item/_size/form__item_size_18col.css);
+@import url(./__item/_size/form__item_size_19col.css);
+@import url(./__item/_size/form__item_size_28col.css);
+@import url(./__handlers/form__handlers.css);
+@import url(./__button/form__button.css);
+@import url(./__button-image/form__button-image.css);
+@import url(./__handlers-link/form__handlers-link.css);
+.form {
+  /*border: 1px dashed red;*/
+  width: 1168px;
+  margin: 0 auto;
+  /*	background-color: rgb(235, 235, 235);*/
+  padding: 50px 100px 0 30px;
+  box-sizing: border-box;
+}

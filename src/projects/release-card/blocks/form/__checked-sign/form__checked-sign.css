@@ -1,0 +1,12 @@
+/* Это стили для невидимой галочки на невыбранной карте */
+
+.form__checked-sign {
+  display: block;
+  width: 70px;
+  height: 70px;
+  background-size: cover;
+  border-radius: 50%;
+  position: absolute;
+  top: 60px;
+  left: 50px;
+}

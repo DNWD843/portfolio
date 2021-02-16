@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./index.css">
+  <title>Замена карты</title>
+</head>
+
+<body>
+  <div class="page">
+    <main class="form">
+      <form class="form__container">
+
+        <h1 class="form__title">Форма для замены карты</h1>
+
+        <section class="form__elem">
+          <h2 class="form__heading">Счет</h2>
+          <p class="form__input form__input_text_heading">Расчетный - 2 156 992 737 &#8381;</p>
+        </section>
+
+        <section class="form__elem">
+          <h2 class="form__heading">Тип</h2>
+          <div class="form__input ">
+            <div class="form__cards-select">
+
+              <div class="form__card">
+                <label for="business" class="form__label form__label_type_radio">
+                  <span class="form__label form__label_type_black">Mastercard для бизнеса</span>
+                  <input type="radio" class="form__item" name="card-choice" value="Mastercard для бизнеса" id="business" checked>
+                  <span class="form__pseudo-card form__pseudo-card_el_business"></span>
+                  <span class="form__checked-sign"></span>
+                </label>
+                <ul class="form__cards-params-list">
+                  <li>- Повышенная безопасность</li>
+                  <li>- Подходит для расчетов за границей</li>
+                  <li>- Срок действия - три года</li>
+                </ul>
+              </div>
+
+
+              <div class="form__card">
+                <label for="business-no-name" class="form__label form__label_type_radio">
+                  <span class="form__label form__label_type_black">Mastercard для бизнеса неименная</span>
+                  <input type="radio" class="form__item" name="card-choice" value="Mastercard для бизнеса неименная" id="business-no-name" checked>
+                  <span class="form__pseudo-card form__pseudo-card_el_business-no-name"></span>
+                  <span class="form__checked-sign"></span>
+                </label>
+                <ul class="form__cards-params-list">
+                  <li>-Универсальная</li>
+                  <li>-Срок действия - три года</li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        <section class="form__elem">
+          <h2 class="form__heading">Кому</h2>
+          <div>
+            <div class="form__input">
+              <div class="form__inner-element">
+                <input type="text" class="form__item form__item_size_28col no-margin-right" name="cardholder-info" id="FIO" placeholder="Фамилия Имя Отчество" pattern="^[А-Яа-яЁё\s]+$" required>
+                <!-- ДЛЯ ФИКСАЦИИ ЛЭЙБЛА В РОЛИ ПЛЭЙСХОЛДЕРА ВВЕРХУ ПРИ ЗАПОЛНЕНИИ ПОЛЯ,
+                 ОБЯЗАТЕЛЬНО УКАЗЫВАТЬ REQUIRED!!! ИНАЧЕ :valid и :invalid НЕ РАБОТАЮТ!!!  -->
+                <label for="FIO" class="form__label form__label_type_common">Фамилия Имя Отчество</label>
+                <span></span>
+                <!-- ЭТОТ СПАН НУЖЕН ДЛЯ ЗНАЧКА СПРАВА ОТ ИНПУТА
+                Я ЕГО СДЕЛАЛ БЕЗ КЛАССА, ЛЕНИВЫЙ Я ))-->
+                <span class="form__error">Введите Ф.И.О. в формате: Иванов Иван Иванович</span>
+              </div>
+            </div>
+            <div class="form__input">
+              <select type="select" class="form__item form__item_size_7col" name="cardholder-info" id="FIO-on-card" value="ФИО на карте">
+                <option value="VOLODKA ILIUSHKIN">VOLODKA ILIUSHKIN</option>
+                <option vakue="VASILIY PUPKIN">VASILIY PUPKIN</option>
+              </select>
+            </div>
+
+
+            <div class="form__input">
+              <div class="form__inner-element">
+                <input type="text" class="form__item form__item_size_28col no-margin-right" name="cardholder-info" id="company" placeholder="Название компании" pattern="^[a-zA-Z\s]+$" required>
+                <!-- ДЛЯ ФИКСАЦИИ ЛЭЙБЛА В РОЛИ ПЛЭЙСХОЛДЕРА ВВЕРХУ ПРИ ЗАПОЛНЕНИИ ПОЛЯ,
+                ОБЯЗАТЕЛЬНО УКАЗЫВАТЬ REQUIRED!!! ИНАЧЕ :valid и :invalid НЕ РАБОТАЮТ!!!  -->
+                <label for="company" class="form__label form__label_type_common">Название компании (латиницей)</label>
+                <span></span>
+                <!-- ЭТОТ СПАН НУЖЕН ДЛЯ ЗНАЧКА СПРАВА ОТ ИНПУТА.
+                Я ЕГО СДЕЛАЛ БЕЗ КЛАССА, ЛЕНИВЫЙ Я )) -->
+                <span class="form__error">Введите название компании латиницей</span>
+
+              </div>
+            </div>
+        </section>
+
+        <section class="form__elem">
+          <h2 class="form__heading">Куда</h2>
+          <div>
+
+            <div class="form__input">
+              <div class="form__inner-element">
+                <input type="text" class="form__item form__item_size_18col" name="cardholder-address" id="delivery-city" placeholder="Город доставки" pattern="^[А-Яа-яЁё\s]+$" required>
+                <!-- ДЛЯ ФИКСАЦИИ ЛЭЙБЛА В РОЛИ ПЛЭЙСХОЛДЕРА ВВЕРХУ ПРИ ЗАПОЛНЕНИИ ПОЛЯ,
+        ОБЯЗАТЕЛЬНО УКАЗЫВАТЬ REQUIRED!!! ИНАЧЕ :valid и :invalid НЕ РАБОТАЮТ!!!  -->
+                <label for="delivery-city" class="form__label form__label_type_common">Город доставки</label>
+                <span></span>
+                <!-- ЭТОТ СПАН НУЖЕН ДЛЯ ЗНАЧКА СПРАВА ОТ ИНПУТА
+                 Я ЕГО СДЕЛАЛ БЕЗ КЛАССА, ЛЕНИВЫЙ Я ))-->
+                <span class="form__error">Введите город доставки</span>
+
+              </div>
+              <a href="#" class="form__input-link">Другой адрес</a>
+            </div>
+
+            <div class="form__input">
+              <div class="form__inner-element">
+                <input type="text" class="form__item form__item_size_13col" name="cardholder-address" id="street" placeholder="Улица" pattern="^[А-Яа-яЁё\s]+$" required>
+                <!-- ДЛЯ ФИКСАЦИИ ЛЭЙБЛА В РОЛИ ПЛЭЙСХОЛДЕРА ВВЕРХУ ПРИ ЗАПОЛНЕНИИ ПОЛЯ,
+        ОБЯЗАТЕЛЬНО УКАЗЫВАТЬ REQUIRED!!! ИНАЧЕ :valid и :invalid НЕ РАБОТАЮТИ!!!  -->
+                <label for="street" class="form__label form__label_type_common">Улица</label>
+                <span></span>
+                <!-- ЭТОТ СПАН НУЖЕН ДЛЯ ЗНАЧКА СПРАВА ОТ ИНПУТА
+                 Я ЕГО СДЕЛАЛ БЕЗ КЛАССА, ЛЕНИВЫЙ Я ))-->
+                <span class="form__error">Введите название улицы доставки</span>
+
+              </div>
+
+              <div class="form__inner-element">
+                <input type="text" class="form__item form__item_size_3col" name="cardholder-address" id="house" placeholder="Дом" required>
+                <!-- ДЛЯ ФИКСАЦИИ ЛЭЙБЛА В РОЛИ ПЛЭЙСХОЛДЕРА ВВЕРХУ ПРИ ЗАПОЛНЕНИИ ПОЛЯ,
+        ОБЯЗАТЕЛЬНО УКАЗЫВАТЬ REQUIRED!!! ИНАЧЕ :valid и :invalid НЕ РАБОТАЮТИ!!!  -->
+                <label for="house" class="form__label form__label_type_common">Дом</label>
+                <span></span>
+                <!-- ЭТОТ СПАН НУЖЕН ДЛЯ ЗНАЧКА СПРАВА ОТ ИНПУТА
+                 Я ЕГО СДЕЛАЛ БЕЗ КЛАССА, ЛЕНИВЫЙ Я ))-->
+              </div>
+
+              <div class="form__inner-element">
+                <input type="text" class="form__item form__item_size_4col" name="cardholder-address" id="block" placeholder="Корпус" required>
+                <!-- ДЛЯ ФИКСАЦИИ ЛЭЙБЛА В РОЛИ ПЛЭЙСХОЛДЕРА ВВЕРХУ ПРИ ЗАПОЛНЕНИИ ПОЛЯ,
+        ОБЯЗАТЕЛЬНО УКАЗЫВАТЬ REQUIRED!!! ИНАЧЕ :valid и :invalid НЕ РАБОТАЮТИ!!!  -->
+                <label for="block" class="form__label form__label_type_common">Корпус</label>
+                <span></span>
+
+                <!-- ЭТОТ СПАН НУЖЕН ДЛЯ ЗНАЧКА СПРАВА ОТ ИНПУТА
+                Я ЕГО СДЕЛАЛ БЕЗ КЛАССА, ЛЕНИВЫЙ Я )) -->
+              </div>
+
+              <div class="form__inner-element">
+                <input type="text" class="form__item form__item_size_4-5col no-margin-right" name="cardholder-address" id="room" placeholder="Квартира" required>
+                <!-- ДЛЯ ФИКСАЦИИ ЛЭЙБЛА В РОЛИ ПЛЭЙСХОЛДЕРА ВВЕРХУ ПРИ ЗАПОЛНЕНИИ ПОЛЯ,
+        ОБЯЗАТЕЛЬНО УКАЗЫВАТЬ REQUIRED!!! ИНАЧЕ :valid и :invalid НЕ РАБОТАЮТИ!!!  -->
+                <label for="room" class="form__label form__label_type_common">Квартира</label>
+                <span></span>
+                <!-- ЭТОТ СПАН НУЖЕН ДЛЯ ЗНАЧКА СПРАВА ОТ ИНПУТА
+                 Я ЕГО СДЕЛАЛ БЕЗ КЛАССА, ЛЕНИВЫЙ Я ))-->
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="form__elem">
+          <h2 class="form__heading">Телефон</h2>
+          <div class="form__input">
+            <div class="form__inner-element">
+              <input type="tel" class="form__item form__item_size_19col" name="cardholder-phone" id="phone" placeholder="Мобильный для службы доставки" pattern="[+]7\s\d{3}\s\d{3}[\-]\d{2}[\-]\d{2}" minlength="16" maxlength="16" required>
+              <!-- ДЛЯ ФИКСАЦИИ ЛЭЙБЛА В РОЛИ ПЛЭЙСХОЛДЕРА ВВЕРХУ ПРИ ЗАПОЛНЕНИИ ПОЛЯ,
+        ОБЯЗАТЕЛЬНО УКАЗЫВАТЬ REQUIRED!!! ИНАЧЕ :valid и :invalid НЕ РАБОТАЮТИ!!!  -->
+              <label for="phone" class="form__label form__label_type_common">Мобильный для службы доставки</label>
+              <span></span>
+              <!-- ЭТОТ СПАН НУЖЕН ДЛЯ ЗНАЧКА СПРАВА ОТ ИНПУТА
+              Я ЕГО СДЕЛАЛ БЕЗ КЛАССА, ЛЕНИВЫЙ Я )) -->
+              <span class="form__error">Введите номер в формате: +7 123 456-78-90</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="form__elem">
+          <h2 class="form__heading">Держатель</h2>
+          <div>
+            <div class="form__input">
+              <div class="form__inner-element">
+                <input type="text" class="form__item form__item_size_10col" name="cardholder-data" id="last-name" placeholder="Фамилия" pattern="^[А-Яа-яЁё\s]+$" required>
+                <!-- ДЛЯ ФИКСАЦИИ ЛЭЙБЛА В РОЛИ ПЛЭЙСХОЛДЕРА ВВЕРХУ ПРИ ЗАПОЛНЕНИИ ПОЛЯ,
+        ОБЯЗАТЕЛЬНО УКАЗЫВАТЬ REQUIRED!!! ИНАЧЕ :valid и :invalid НЕ РАБОТАЮТИ!!!  -->
+                <label for="last-name" class="form__label form__label_type_common">Фамилия</label>
+                <span></span>
+                <!-- ЭТОТ СПАН НУЖЕН ДЛЯ ЗНАЧКА СПРАВА ОТ ИНПУТА
+                Я ЕГО СДЕЛАЛ БЕЗ КЛАССА, ЛЕНИВЫЙ Я ))-->
+                <span class="form__error">Введите фамилию в формате: Иванов</span>
+
+              </div>
+              <div class="form__inner-element">
+                <input type="text" class="form__item form__item_size_8col" name="cardholder-data" id="first-name" placeholder="Имя" pattern="^[А-Яа-яЁё\s]+$" required>
+                <!-- ДЛЯ ФИКСАЦИИ ЛЭЙБЛА В РОЛИ ПЛЭЙСХОЛДЕРА ВВЕРХУ ПРИ ЗАПОЛНЕНИИ ПОЛЯ,
+        ОБЯЗАТЕЛЬНО УКАЗЫВАТЬ REQUIRED!!! ИНАЧЕ :valid и :invalid НЕ РАБОТАЮТИ!!!  -->
+                <label for="first-name" class="form__label form__label_type_common">Имя</label>
+                <span></span>
+                <!-- ЭТОТ СПАН НУЖЕН ДЛЯ ЗНАЧКА СПРАВА ОТ ИНПУТА
+                Я ЕГО СДЕЛАЛ БЕЗ КЛАССА, ЛЕНИВЫЙ Я ))-->
+                <span class="form__error">Введите имя в формате: Иван</span>
+
+              </div>
+              <div class="form__inner-element">
+                <input type="text" class="form__item form__item_size_8col no-margin-right" name="cardholder-data" id="name" placeholder="Отчество" pattern="^[А-Яа-яЁё\s]+$" required>
+                <!-- ДЛЯ ФИКСАЦИИ ЛЭЙБЛА В РОЛИ ПЛЭЙСХОЛДЕРА ВВЕРХУ ПРИ ЗАПОЛНЕНИИ ПОЛЯ,
+        ОБЯЗАТЕЛЬНО УКАЗЫВАТЬ REQUIRED!!! ИНАЧЕ :valid и :invalid НЕ РАБОТАЮТИ!!!  -->
+                <label for="name" class="form__label form__label_type_common">Отчество</label>
+                <span></span>
+                <!-- ЭТОТ СПАН НУЖЕН ДЛЯ ЗНАЧКА СПРАВА ОТ ИНПУТА
+                Я ЕГО СДЕЛАЛ БЕЗ КЛАССА, ЛЕНИВЫЙ Я ))-->
+                <span class="form__error">Введите отчество в формате: Иванович</span>
+
+              </div>
+            </div>
+
+            <div class="form__input">
+              <input type="checkbox" class="form__item" name="cardholder-data" id="no-name" value="отчество отсутствует" checked>
+              <label for="no-name"><span class="form__label-checkbox">Отчество отсутствует</span></label>
+            </div>
+
+            <div class="form__input">
+              <div class="form__inner-element">
+                <input type="text" class="form__item form__item_size_19col " name="cardholder-data" id="born-place" placeholder="Место рождения" pattern="^[А-Яа-яЁё\s]+$" required>
+                <!-- ДЛЯ ФИКСАЦИИ ЛЭЙБЛА В РОЛИ ПЛЭЙСХОЛДЕРА ВВЕРХУ ПРИ ЗАПОЛНЕНИИ ПОЛЯ,
+        ОБЯЗАТЕЛЬНО УКАЗЫВАТЬ REQUIRED!!! ИНАЧЕ :valid и :invalid НЕ РАБОТАЮТИ!!!  -->
+                <label for="born-place" class="form__label form__label_type_common">Место рождения</label>
+                <span></span>
+                <!-- ЭТОТ СПАН НУЖЕН ДЛЯ ЗНАЧКА СПРАВА ОТ ИНПУТА
+                Я ЕГО СДЕЛАЛ БЕЗ КЛАССА, ЛЕНИВЫЙ Я )) -->
+                <span class="form__error">Введите место рождения как в документе</span>
+
+              </div>
+              <div class="form__inner-element">
+                <input type="text" class="form__item form__item_size_8col no-margin-right" name="cardholder-data" id="born-date" placeholder="Дата рождения" pattern="\d{2}[\.]\d{2}[\.]\d{4}" required>
+                <!-- ДЛЯ ФИКСАЦИИ ЛЭЙБЛА В РОЛИ ПЛЭЙСХОЛДЕРА ВВЕРХУ ПРИ ЗАПОЛНЕНИИ ПОЛЯ,
+        ОБЯЗАТЕЛЬНО УКАЗЫВАТЬ REQUIRED!!! ИНАЧЕ :valid и :invalid НЕ РАБОТАЮТИ!!!  -->
+                <label for="born-date" class="form__label form__label_type_common">Дата рождения</label>
+                <span></span>
+                <!-- ЭТОТ СПАН НУЖЕН ДЛЯ ЗНАЧКА СПРАВА ОТ ИНПУТА
+                Я ЕГО СДЕЛАЛ БЕЗ КЛАССА, ЛЕНИВЫЙ Я ))-->
+                <span class="form__error">Введите дату рождения в формате: дд.мм.гггг</span>
+
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="form__elem">
+          <h2 class="form__heading">Документ</h2>
+          <div>
+            <div class="form__input">
+              <select type="select" class="form__item form__item_size_8col" name="cardholder-document" id="doc-type">
+                <option value="Паспорт гражданина РФ">Паспорт гражданина РФ</option>
+                <option value="Водительские права">Водительские права</option>
+              </select>
+            </div>
+
+            <div class="form__input">
+              <div class="form__inner-element">
+                <input type="text" class="form__item form__item_size_4-5col" name="cardholder-document" id="doc-serial" placeholder="Серия" pattern="[0-9]{1,4}" minlength="4" maxlength="4" required>
+                <!-- ДЛЯ ФИКСАЦИИ ЛЭЙБЛА В РОЛИ ПЛЭЙСХОЛДЕРА ВВЕРХУ ПРИ ЗАПОЛНЕНИИ ПОЛЯ,
+                ОБЯЗАТЕЛЬНО УКАЗЫВАТЬ REQUIRED!!! ИНАЧЕ :valid и :invalid НЕ РАБОТАЮТИ!!!  -->
+                <label for="doc-serial" class="form__label form__label_type_common">Серия</label>
+                <span></span>
+                <!-- ЭТОТ СПАН НУЖЕН ДЛЯ ЗНАЧКА СПРАВА ОТ ИНПУТА
+                Я ЕГО СДЕЛАЛ БЕЗ КЛАССА, ЛЕНИВЫЙ Я )) -->
+                <span class="form__error">Введите серию в формате: 1234</span>
+
+              </div>
+              <div class="form__inner-element">
+                <input type="text" class="form__item form__item_size_5col" name="cardholder-document" id="doc-number" placeholder="Номер" pattern="[0-9]{1,6}" minlength="6" maxlength="6" required>
+                <!-- ДЛЯ ФИКСАЦИИ ЛЭЙБЛА В РОЛИ ПЛЭЙСХОЛДЕРА ВВЕРХУ ПРИ ЗАПОЛНЕНИИ ПОЛЯ,
+                ОБЯЗАТЕЛЬНО УКАЗЫВАТЬ REQUIRED!!! ИНАЧЕ :valid и :invalid НЕ РАБОТАЮТИ!!!  -->
+                <label for="doc-number" class="form__label form__label_type_common">Номер</label>
+                <span></span>
+                <!-- ЭТОТ СПАН НУЖЕН ДЛЯ ЗНАЧКА СПРАВА ОТ ИНПУТА
+                Я ЕГО СДЕЛАЛ БЕЗ КЛАССА, ЛЕНИВЫЙ Я )) -->
+                <span class="form__error">Введите номер в формате: 123456</span>
+
+              </div>
+              <div class="form__inner-element">
+                <input type="text" class="form__item form__item_size_6-5col" name="cardholder-document" id="doc-date" placeholder="Когда выдан" pattern="\d{2}[\.]\d{2}[\.]\d{4}" required>
+                <!-- ДЛЯ ФИКСАЦИИ ЛЭЙБЛА В РОЛИ ПЛЭЙСХОЛДЕРА ВВЕРХУ ПРИ ЗАПОЛНЕНИИ ПОЛЯ,
+                 ОБЯЗАТЕЛЬНО УКАЗЫВАТЬ REQUIRED!!! ИНАЧЕ :valid и :invalid НЕ РАБОТАЮТИ!!!  -->
+                <label for="doc-date" class="form__label form__label_type_common">Когда выдан</label>
+                <span></span>
+                <!-- ЭТОТ СПАН НУЖЕН ДЛЯ ЗНАЧКА СПРАВА ОТ ИНПУТА
+                Я ЕГО СДЕЛАЛ БЕЗ КЛАССА, ЛЕНИВЫЙ Я ))-->
+                <span class="form__error">Введите дату выдачи документа в формате: дд.мм.гггг</span>
+
+              </div>
+              <div class="form__inner-element">
+                <input type="text" class="form__item form__item_size_8-3col no-margin-right" name="cardholder-document" id="doc-code" placeholder="Код подразделения" pattern="\d{3}[\-)]\d{3}" minlength="7" maxlength="7" required>
+                <label for="doc-code" class="form__label form__label_type_common">Код подразделения</label>
+                <span></span>
+                <!-- ЭТОТ СПАН НУЖЕН ДЛЯ ЗНАЧКА СПРАВА ОТ ИНПУТА
+                Я ЕГО СДЕЛАЛ БЕЗ КЛАССА, ЛЕНИВЫЙ Я ))-->
+                <span class="form__error">Введите код подразделения в формате:<br> 123-456</span>
+
+              </div>
+            </div>
+            <div class="form__input">
+              <div class="form__inner-element">
+                <input type="text" class="form__item form__item_size_28col no-margin-right" name="cardholder-document" id="doc-department" placeholder="Кем выдан" pattern="^[А-Яа-яЁё\s]+$" required>
+                <!-- ДЛЯ ФИКСАЦИИ ЛЭЙБЛА В РОЛИ ПЛЭЙСХОЛДЕРА ВВЕРХУ ПРИ ЗАПОЛНЕНИИ ПОЛЯ,
+                ОБЯЗАТЕЛЬНО УКАЗЫВАТЬ REQUIRED!!! ИНАЧЕ :valid и :invalid НЕ РАБОТАЮТИ!!!  -->
+                <label for="doc-department" class="form__label form__label_type_common">Кем выдан</label>
+                <span></span>
+                <!-- ЭТОТ СПАН НУЖЕН ДЛЯ ЗНАЧКА СПРАВА ОТ ИНПУТА
+                Я ЕГО СДЕЛАЛ БЕЗ КЛАССА, ЛЕНИВЫЙ Я )) -->
+                <span class="form__error">Введите подразделение, выдавшее документ</span>
+
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="form__elem">
+          <h2 class="form__heading">Прописка</h2>
+          <div>
+            <div class="form__input">
+              <div class="form__inner-element">
+                <input type="text" class="form__item form__item_size_18col" name="cardholder-registration" id="reg-city" placeholder="Город прописки" pattern="^[А-Яа-яЁё\s]+$" required>
+                <!-- ДЛЯ ФИКСАЦИИ ЛЭЙБЛА В РОЛИ ПЛЭЙСХОЛДЕРА ВВЕРХУ ПРИ ЗАПОЛНЕНИИ ПОЛЯ,
+        ОБЯЗАТЕЛЬНО УКАЗЫВАТЬ REQUIRED!!! ИНАЧЕ :valid и :invalid НЕ РАБОТАЮТИ!!!  -->
+                <label for="reg-city" class="form__label form__label_type_common">Город прописки</label>
+                <span></span>
+                <!-- ЭТОТ СПАН НУЖЕН ДЛЯ ЗНАЧКА СПРАВА ОТ ИНПУТА
+                Я ЕГО СДЕЛАЛ БЕЗ КЛАССА, ЛЕНИВЫЙ Я ))-->
+                <span class="form__error">Введите город прописки</span>
+
+              </div>
+              <a href="#" class="form__input-link">Другой адрес</a>
+            </div>
+            <div class="form__input">
+              <div class="form__inner-element">
+                <input type="text" class="form__item form__item_size_13col" name="cardholder-registration" id="reg-street" placeholder="Улица" pattern="^[А-Яа-яЁё\s]+$" required>
+                <!-- ДЛЯ ФИКСАЦИИ ЛЭЙБЛА В РОЛИ ПЛЭЙСХОЛДЕРА ВВЕРХУ ПРИ ЗАПОЛНЕНИИ ПОЛЯ,
+        ОБЯЗАТЕЛЬНО УКАЗЫВАТЬ REQUIRED!!! ИНАЧЕ :valid и :invalid НЕ РАБОТАЮТИ!!!  -->
+                <label for="reg-street" class="form__label form__label_type_common">Улица</label>
+                <span></span>
+                <!-- ЭТОТ СПАН НУЖЕН ДЛЯ ЗНАЧКА СПРАВА ОТ ИНПУТА
+                Я ЕГО СДЕЛАЛ БЕЗ КЛАССА, ЛЕНИВЫЙ Я ))-->
+                <span class="form__error">Введите название улицы прописки</span>
+
+              </div>
+              <div class="form__inner-element">
+                <input type="text" class="form__item form__item_size_3col" name="cardholder-registration" id="reg-house" placeholder="Дом" required>
+                <!-- ДЛЯ ФИКСАЦИИ ЛЭЙБЛА В РОЛИ ПЛЭЙСХОЛДЕРА ВВЕРХУ ПРИ ЗАПОЛНЕНИИ ПОЛЯ,
+        ОБЯЗАТЕЛЬНО УКАЗЫВАТЬ REQUIRED!!! ИНАЧЕ :valid и :invalid НЕ РАБОТАЮТИ!!!  -->
+                <label for="reg-house" class="form__label form__label_type_common">Дом</label>
+                <span></span>
+                <!-- ЭТОТ СПАН НУЖЕН ДЛЯ ЗНАЧКА СПРАВА ОТ ИНПУТА
+                Я ЕГО СДЕЛАЛ БЕЗ КЛАССА, ЛЕНИВЫЙ Я ))-->
+              </div>
+              <div class="form__inner-element">
+                <input type="text" class="form__item form__item_size_4col" name="cardholder-registration" id="reg-block" placeholder="Корпус" required>
+                <!-- ДЛЯ ФИКСАЦИИ ЛЭЙБЛА В РОЛИ ПЛЭЙСХОЛДЕРА ВВЕРХУ ПРИ ЗАПОЛНЕНИИ ПОЛЯ,
+        ОБЯЗАТЕЛЬНО УКАЗЫВАТЬ REQUIRED!!! ИНАЧЕ :valid и :invalid НЕ РАБОТАЮТИ!!!  -->
+                <label for="reg-block" class="form__label form__label_type_common">Корпус</label>
+                <span></span>
+                <!-- ЭТОТ СПАН НУЖЕН ДЛЯ ЗНАЧКА СПРАВА ОТ ИНПУТА
+                Я ЕГО СДЕЛАЛ БЕЗ КЛАССА, ЛЕНИВЫЙ Я ))-->
+              </div>
+              <div class="form__inner-element">
+                <input type="text" class="form__item form__item_size_4-5col no-margin-right" name="cardholder-registration" id="reg-room" value="" placeholder="Квартира" required>
+                <!-- ДЛЯ ФИКСАЦИИ ЛЭЙБЛА В РОЛИ ПЛЭЙСХОЛДЕРА ВВЕРХУ ПРИ ЗАПОЛНЕНИИ ПОЛЯ,
+        ОБЯЗАТЕЛЬНО УКАЗЫВАТЬ REQUIRED!!! ИНАЧЕ :valid и :invalid НЕ РАБОТАЮТИ!!!  -->
+                <label for="reg-room" class="form__label form__label_type_common">Квартира</label>
+                <span></span>
+                <!-- ЭТОТ СПАН НУЖЕН ДЛЯ ЗНАЧКА СПРАВА ОТ ИНПУТА
+                Я ЕГО СДЕЛАЛ БЕЗ КЛАССА, ЛЕНИВЫЙ Я )) -->
+              </div>
+            </div>
+
+            <div class="form__input">
+              <input type="checkbox" class="form__item " name="cardholder-registration" id="no-reg-street" value="Улица отсутствует">
+              <label for="no-reg-street"><span class="form__label-checkbox">Улица отсутствует</span></label>
+            </div>
+
+          </div>
+        </section>
+
+
+        <section>
+
+          <div class="form__handlers">
+            <label for="submit">
+              <input type="submit" name="submit" id="submit" class="form__button" value="Заказать карту" checked>
+              <span class="form__button-image"></span>
+            </label>
+            <a href="#" class="form__handlers-link">Назад</a>
+          </div>
+        </section>
+      </form>
+    </main>
+    </div>
+</body>
+
+</html>

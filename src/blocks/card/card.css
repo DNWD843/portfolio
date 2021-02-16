@@ -1,0 +1,16 @@
+@import url('./__title/card__title.css');
+@import url('./__subtitle/card__subtitle.css');
+@import url('./__image/card__image.css');
+@import url('./__description/card__description.css');
+@import url('./__menu/card__menu.css');
+@import url('./__menu-item/card__menu-item.css');
+@import url('./__link/card__link.css');
+@import url('./__overlay/card__overlay.css');
+
+.card {
+  margin: 0;
+  padding: 10px;
+  box-sizing: border-box;
+  box-shadow: 0 0 10px #fff;
+  border-radius: 5px;
+}

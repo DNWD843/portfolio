@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>ЗМЕЙКА</title>
+</head>
+
+<body>
+    <canvas id="canvas" width="600" height="600"></canvas>
+    <script src="https://code.jquery.com/jquery-2.1.0.js"></script>
+    <script>
+        var canvas = document.getElementById("canvas");
+        var ctx = canvas.getContext("2d");
+        var width = canvas.width;
+        var height = canvas.height;
+
+        //создаем переменные для разметки игрового поля на ячейки 10х10 пикселей
+        var blockSize = 10;
+        var widthInBlocks = width / blockSize;
+        var heightInBlocks = height / blockSize;
+
+        //переменная для ведения счета
+        var score = 0;
+        var speed = 200;
+
+        //рисуем рамку для игрового поля. создаем функцию drawBorder
+        var drawBorder = function() {
+            ctx.fillStyle = "gray";
+            ctx.fillRect(0, 0, width, blockSize);
+            ctx.fillRect(0, height - blockSize, width, blockSize);
+            ctx.fillRect(0, 0, blockSize, height);
+            ctx.fillRect(width - blockSize, 0, blockSize, height);
+        };
+
+        //создаем функцию отображения счета drawScore
+        var drawScore = function() {
+            ctx.font = "20px Courier";
+            ctx.fillStyle = "black";
+            ctx.textBaseline = "top";
+            ctx.textAlign = "left";
+            ctx.fillText("Счет: " + score, blockSize, blockSize);
+        };
+
+        //создаем функцию вывода надписи КОНЕЦ ИГРЫ в конце игры
+        var gameOver = function() {
+            clearInterval(intervalId);
+            ctx.font = "40px Courier";
+            ctx.fillStyle = "black";
+            ctx.textBaseline = "middle";
+            ctx.textAlign = "center";
+            ctx.fillText("КОНЕЦ ИГРЫ!", width / 2, height / 2);
+        };
+
+        //создаем конструктор для ячеек сетки
+        var Block = function(col, row) {
+            this.col = col;
+            this.row = row
+        };
+        //для рисования в заданной ячейке квадрата или окружности создаем два метода
+        //метод drawSquare и метод drawCircle
+        Block.prototype.drawSquare = function(color) {
+            var x = this.col * blockSize;
+            var y = this.row * blockSize;
+            ctx.fillStyle = color;
+            ctx.fillRect(x, y, blockSize, blockSize);
+        };
+
+        Block.prototype.drawCircle = function(color) {
+            var centerX = this.col * blockSize + blockSize / 2;
+            var centerY = this.row * blockSize + blockSize / 2;
+            ctx.fillStyle = color;
+            circle(centerX, centerY, blockSize / 2, true);
+        };
+
+        //функция рисования окружностей (для метода drawCircle)
+        var circle = function(x, y, r, fillCircle) {
+            ctx.beginPath();
+            ctx.arc(x, y, r, 0, Math.PI * 2, false);
+            if (fillCircle) {
+                ctx.fill();
+            };
+            ctx.stroke();
+        };
+
+        //создаем метод проверки совпадения блоков двух разных объектов
+        //если совпадение есть - метод вернет true, если нет- false
+        //используем оператор return
+        //equal - сравнение
+        Block.prototype.equal = function(otherBlock) {
+            return this.col === otherBlock.col && this.row === otherBlock.row;
+        };
+        /* Метод equal весьма прост: если свойства col и row двух ячеек (this и otherBlock) совпадают 
+        (то есть this.col равняется otherBlock.col и this.row равняется otherBlock.row), значит ячейки находятся
+        в одной позиции и метод вернет true.
+        Например, создадим два объекта-ячейки под названиями apple (яблоко) и head (голова) и проверим, совпадают ли их позиции:
+
+        var apple = new Block(2, 5);
+        var head = new Block(3, 5);
+        head.equal(apple);
+        false
+        Обратите внимание: не имеет значения, напишем мы head.equal(apple) или apple.equal(head), в обоих случаях будет выпол-
+        нено одно и то же сравнение.*/
+
+        /*Создаем змейку
+        Теперь займемся змейкой. Мы будем хранить ее положение в массиве под названием segments, состоящем из объектов-ячеек. 
+        Чтобы передвинуть змейку, мы будем добавлять новую ячейку в начало массива segments и убирать ячейку с конца. 
+        Первый элемент массива будет соответствовать змеиной голове.*/
+
+        //Первым делом нам нужен конструктор для создания объекта-змейки:
+        var Snake = function() {
+            this.segments = [
+                new Block(7, 5),
+                new Block(6, 5),
+                new Block(5, 5)
+            ];
+            this.direction = "right";
+            this.nextDirection = "right";
+        };
+        /*Рисуем змейку
+        Чтобы нарисовать змейку, нам нужно перебрать в цикле все объекты-ячейки из массива segments, вызывая методы drawSquare. 
+        Таким образом, для каждого сегмента змеиного тела в соответствующей ячейке будет нарисован квадрат.*/
+
+        Snake.prototype.draw = function() {
+            this.segments[0].drawSquare("brown");
+            for (var i = 1; i < this.segments.length; i++) {
+
+                this.segments[i].drawSquare("Blue");
+            }
+        };
+        /*Для перемещения змейки на одну ячейку в текущем направлении мы создадим метод move. Чтобы змейка передвинулась,
+мы добавим ей новый сегмент головы (то есть добавим новый объект-ячейку в начало массива segments), а затем удалим
+из массива segments последний элемент — сегмент хвоста.
+Метод move также будет вызывать метод под названием checkCollision, проверяющий, не столкнулась ли новая голова со зме-
+иным хвостом или со стеной (рамкой), а также не съела ли новая голова яблоко. Если голова столкнулась со стеной или хвостом, 
+мы завершим игру вызовом функции gameOver, созданной в предыдущей главе. Если же змейка съела яблоко, мы увеличим счет игры
+ и переместим яблоко в новое место.*/
+        Snake.prototype.move = function() {
+            var head = this.segments[0];
+            var newHead;
+
+            this.direction = this.nextDirection;
+            if (this.direction === "right") {
+                newHead = new Block(head.col + 1, head.row);
+            } else if (this.direction === "down") {
+                newHead = new Block(head.col, head.row + 1);
+            } else if (this.direction === "left") {
+                newHead = new Block(head.col - 1, head.row);
+            } else if (this.direction === "up") {
+                newHead = new Block(head.col, head.row - 1);
+            }
+            if (this.checkCollision(newHead)) {
+                gameOver();
+                return;
+            }
+            this.segments.unshift(newHead);
+
+            if (newHead.equal(apple.position)) {
+                score++;
+                if (score > 2 && score < 7) {
+                    speed = 150;
+                } else if (score > 6 && score < 10) {
+                    speed = 100;
+                } else if (score > 9 && score < 15) {
+                    speed = 100;
+                } else if (score > 14) {
+                    speed = 50;
+                }
+                clearInterval(intervalId);
+                intervalId = setInterval(function() {
+                    ctx.clearRect(0, 0, width, height);
+                    drawScore();
+                    snake.move();
+                    snake.draw();
+                    apple.draw();
+                    drawBorder();
+                }, speed);
+                apple.move();
+            } else {
+                this.segments.pop();
+            }
+        };
+        //Добавляем метод checkCollision
+        /*Проверка столкновений со стенами В строке  мы создаем переменную leftCollision и присваиваем ей значение выражения 
+        head.col=== 0. Таким образом, эта переменная примет значение true, если змейка столкнется с левой стенкой,
+        иначе говоря, если голова окажется в столбце 0. Аналогично переменная topCollision используется для проверки строки, 
+        в которой находится змеиная голова, чтобы выяснить, не столкнулась ли она с верхней стенкой.
+        Далее мы проверяем столкновение с правой стенкой, сравнивая столбец, где находится голова со значением widthInBlocks – 1. 
+        Поскольку widthInBlocks равняется 40, по сути, это проверка, не находится ли голова в столбце 39, который занят правой 
+        стенкой.  Затем мы выполняем похожую проверку для нижней стенки (переменная bottomCollision), проверяя, не равно ли 
+        свойство головы row значению heightInBlocks – 1.  мы определяем, столкнулась ли змейка с какой-
+        нибудь из стенок: с помощью операции || (ИЛИ) мы проверяем, не соответствует ли переменная leftCollision, или topCollision, 
+        или rightCollision, или bottomCollision значению true. Полученный булев результат мы сохраняем в переменной wallCollision.*/
+
+
+        Snake.prototype.checkCollision = function(head) {
+            var leftCollision = (head.col === 0);
+            var topCollision = (head.row === 0);
+            var rightCollision = (head.col === widthInBlocks - 1);
+            var bottomCollision = (head.row === heightInBlocks - 1);
+            var wallCollision = leftCollision || topCollision ||
+                rightCollision || bottomCollision;
+            var selfCollision = false;
+            for (var i = 0; i < this.segments.length; i++) {
+                if (head.equal(this.segments[i])) {
+                    selfCollision = true;
+                }
+            }
+            return wallCollision || selfCollision;
+        };
+
+        //Управляем змейкой с клавиатуры
+        //Обработчик события keydown
+        var directions = {
+            37: "left",
+            38: "up",
+            39: "right",
+            40: "down"
+        };
+        $("body").keydown(function(event) {
+            var newDirection = directions[event.keyCode];
+            if (newDirection !== undefined) {
+                snake.setDirection(newDirection);
+            }
+        });
+        // Создаем метод setDirection
+        Snake.prototype.setDirection = function(newDirection) {
+            if (this.direction === "up" && newDirection === "down") {
+                return;
+            } else if (this.direction === "right" && newDirection === "left") {
+                return;
+            } else if (this.direction === "down" && newDirection === "up") {
+                return;
+            } else if (this.direction === "left" && newDirection === "right") {
+                return;
+            }
+            this.nextDirection = newDirection;
+        };
+
+
+        //Создаем яблоко
+        /*В этой игре яблоко представляет собой объект из трех компонентов: это свойство position, которое хранит 
+        позицию яблока в виде объекта-ячейки, метод draw, с помощью которого мы будем рисовать яблоко на экране, 
+        и метод move, который нужен, чтобы задать яблоку новую позицию после того, как змейка его съела.
+        Пишем конструктор Apple
+        Все, что делает конструктор, — это задает свойство position, присваивая ему новый объект-ячейку.*/
+
+        var Apple = function() {
+            this.position = new Block(10, 10);
+        };
+
+        //Рисуем яблоко
+        //Чтобы нарисовать яблоко, создадим метод draw:
+        Apple.prototype.draw = function() {
+            this.position.drawCircle("LimeGreen");
+        };
+
+        // Перемещаем яблоко
+        /*Метод move перемещает яблоко в случайную новую позицию на игровом поле (то есть в любую ячейку на «холсте», 
+        кроме области рамки). Мы будем вызывать этот метод всякий раз, когда змейка съест яблоко,
+        чтобы оно появилось снова в другой позиции.*/
+        Apple.prototype.move = function() {
+            var randomCol = Math.floor(Math.random() * (widthInBlocks - 2)) + 1;
+            var randomRow = Math.floor(Math.random() * (heightInBlocks - 2)) + 1;
+            this.position = new Block(randomCol, randomRow);
+        };
+
+        var snake = new Snake();
+        var apple = new Apple();
+        // Запускаем функцию анимации через setInterval
+        var intervalId = setInterval(function() {
+            ctx.clearRect(0, 0, width, height);
+            drawScore();
+            snake.move();
+            snake.draw();
+            apple.draw();
+            drawBorder();
+        }, speed);
+    </script>
+</body>
+
+</html>

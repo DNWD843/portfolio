@@ -1,0 +1,11 @@
+@import url(./vendor/normalize.css);
+@import url(./page/page.css);
+@import url(./vendor/geometria.css);
+@import url(./blocks/form/form.css);
+@import url(./blocks/no-margin-right/no-margin-right.css);
+body {
+  overflow-x: hidden;
+}
+
+
+/* я знаю, что это не по БЭМ!
