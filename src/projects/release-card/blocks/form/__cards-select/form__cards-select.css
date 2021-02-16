@@ -1,0 +1,8 @@
+.form__cards-select {
+  /*border: 1px solid orange;*/
+  width: 100%;
+  min-height: 250px;
+  display: flex;
+  flex-direction: row;
+  margin: 40px 0 20px;
+}

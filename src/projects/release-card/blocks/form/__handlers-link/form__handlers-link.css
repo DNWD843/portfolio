@@ -1,0 +1,8 @@
+.form__handlers-link {
+  display: block;
+  color: #0073c3;
+  margin: 40px 0 0 180px;
+  text-decoration: underline dotted;
+  text-underline-position: under;
+  font-weight: bold;
+}

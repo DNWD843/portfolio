@@ -1,0 +1,7 @@
+.form__label_type_common {
+  position: absolute;
+  left: 15px;
+  top: 30px;
+  z-index: 5;
+  transition: font-size .7s, top .7s, left .7s;
+}

@@ -1,0 +1,15 @@
+.form__button-image {
+  width: 180px;
+  height: 60px;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: -20px;
+  left: -15px;
+  background-image: url(../../../images/submit-button.png);
+  background-size: cover;
+  background-position: center;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #a3a2a2;
+  transition: top .1s, left .1s, box-shadow .1s;
+}

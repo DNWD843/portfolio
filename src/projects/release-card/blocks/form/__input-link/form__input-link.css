@@ -1,0 +1,6 @@
+.form__input-link {
+  color: #0073c3;
+  margin: 30px auto 0 100px;
+  text-decoration: underline dotted;
+  text-underline-position: under;
+}
