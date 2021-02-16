@@ -1,7 +1,6 @@
 @import url('./__item/cards__item.css');
 
 .cards {
-  border: 1px solid red;
   display: flex;
   justify-content: center;
   align-items: flex-start;
