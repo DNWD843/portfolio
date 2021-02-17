@@ -1,6 +1,6 @@
 .card__image {
   background-size: cover;
-  background-position: top left;
+  background-position: center;
   width: 300px;
   height: 200px;
   margin: 0 0 20px;
