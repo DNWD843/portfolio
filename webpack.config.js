@@ -1,11 +1,16 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-  entry: { main: path.resolve(__dirname, './src/scripts/index.js') },
+  entry: { main: './src/scripts/index.js' },
   output: {
     path: path.resolve(__dirname, './dist/'),
     filename: '[name].bundle.js',
+  },
+  experiments: {
+    asset: true,
   },
   module: {
     rules: [
@@ -15,19 +20,42 @@ module.exports = {
         use: ['babel-loader'],
       },
       {
-        test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
-        type: 'asset/resource',
+        test: /\.(gif|png|jpg|jpeg)$/,
+        type: 'asset/inline',
       },
       {
-        test: /\.(woff(2)?|eot|ttf|otf|svg)$/,
+        test: /\.(woff|woff2|eot|ttf|otf|svg)$/,
         type: 'asset/inline',
+      },
+      {
+        test: /\.css$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          { loader: 'css-loader', options: { importLoaders: 1 } },
+          'postcss-loader',
+        ],
+        /*Загрузчики используются вебпаком справа налево,
+        так что последним должен быть sass-loader(если его установили и используем),
+         затем PostCSS, затем CSS и, наконец, style-loader,
+         который применяет скомпилированные стили к элементам DOM*/
       },
     ],
   },
+  mode: 'development',
+  devServer: {
+    historyApiFallback: true,
+    contentBase: path.resolve(__dirname, './dist'),
+    open: true,
+    compress: true,
+    hot: true,
+    port: 8080,
+  },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, './src/index.html'),
-      filename: 'index.html',
+      template: './src/index.html',
+      //filename: 'index.html',
     }),
+    new MiniCssExtractPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
   ],
 };

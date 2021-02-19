@@ -1,6 +1,7 @@
 @import url('./__title/card__title.css');
 @import url('./__subtitle/card__subtitle.css');
 @import url('./__image/card__image.css');
+
 @import url('./__image/_type/card__image_type_ball-blocks.css');
 @import url('./__image/_type/card__image_type_hangman.css');
 @import url('./__image/_type/card__image_type_painter.css');
