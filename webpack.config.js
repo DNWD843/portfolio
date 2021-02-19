@@ -4,7 +4,11 @@ const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-  entry: { main: './src/scripts/index.js' },
+  entry: {
+    main: './src/scripts/index.js',
+    fourRules: './src/projects/FOUR_RULES/index.js',
+    releaseCard: './src/projects/release-card',
+  },
   output: {
     path: path.resolve(__dirname, './dist/'),
     filename: '[name].bundle.js',
@@ -39,23 +43,40 @@ module.exports = {
          затем PostCSS, затем CSS и, наконец, style-loader,
          который применяет скомпилированные стили к элементам DOM*/
       },
+      /* {
+        test: /\.html$/,
+        use: ['html-loader'],
+      },*/
     ],
   },
   mode: 'development',
-  devServer: {
+  /*devServer: {
     historyApiFallback: true,
     contentBase: path.resolve(__dirname, './dist'),
     open: true,
     compress: true,
     hot: true,
     port: 8080,
-  },
+  },*/
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.html',
-      //filename: 'index.html',
+      filename: 'index.html',
+      chunks: ['main'],
     }),
-    new MiniCssExtractPlugin(),
+    new HtmlWebpackPlugin({
+      template: './src/projects/FOUR_RULES/index.html',
+      filename: 'fourRules.html',
+      chunks: ['fourRules'],
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/projects/release-card/index.html',
+      filename: 'releaseCard.html',
+      chunks: ['releaseCard'],
+    }),
+    new MiniCssExtractPlugin({
+      filename: '[name].css',
+    }),
     new webpack.HotModuleReplacementPlugin(),
   ],
 };
