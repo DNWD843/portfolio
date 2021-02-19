@@ -2,23 +2,32 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: { main: './src/scripts/index.js' },
+  entry: { main: path.resolve(__dirname, './src/scripts/index.js') },
   output: {
     path: path.resolve(__dirname, './dist/'),
-    filename: 'main.js',
+    filename: '[name].bundle.js',
   },
   module: {
     rules: [
       {
         test: /\.js$/,
-        loader: 'babel-loader',
         exclude: '/node_modules/',
+        use: ['babel-loader'],
+      },
+      {
+        test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
+        type: 'asset/resource',
+      },
+      {
+        test: /\.(woff(2)?|eot|ttf|otf|svg)$/,
+        type: 'asset/inline',
       },
     ],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/index.html',
+      template: path.resolve(__dirname, './src/index.html'),
+      filename: 'index.html',
     }),
   ],
 };
