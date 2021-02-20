@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie-edge" />
+    <meta name="description" content="portfolio Dmitry Neklyudov" />
+    <meta name="author" content="Dmitry Neklyudov" />
+    <meta name="keywords" content="portfolio, html, css, javascript, webpack" />
+    <title>PORTFOLIO</title>
+  <script defer src="main.bundle.js"></script><link href="main.css" rel="stylesheet"></head>
+  <body id="page" class="page">
+    <div class="page__container">
+      <header id="header" class="header">
+        <h1 class="header__title">PORTFOLIO</h1>
+        <p class="header__subtitle">author Dmitry Neklyudov</p>
+        <nav class="menu">
+          <ul class="menu__links-list">
+            <li class="menu__item">
+              <a href="#beginner" class="menu__nav-link menu__nav-link_active">Первые шаги</a>
+            </li>
+            <li class="menu__item">
+              <a href="#practicum" class="menu__nav-link">Яндекс.Практикум</a>
+            </li>
+            <li class="menu__item">
+              <a href="#testworks" class="menu__nav-link">Тестовые задания</a>
+            </li>
+            <li class="menu__item"><a href="#" class="menu__nav-link">Проекты</a></li>
+            <li class="menu__item"><a href="#" class="menu__nav-link">Личный проект</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <main class="content page__content">
+        <section id="beginner" class="content__section">
+          <h2 class="content__title">Первые шаги</h2>
+          <ul class="cards content__cards">
+            <li class="cards__item">
+              <article class="card">
+                <h3 class="card__title">HANGMAN</h3>
+                <p class="card__subtitle">Javascript</p>
+                <div class="card__image card__image_type_hangman">
+                  <a
+                    href="./hangman.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="card__overlay"
+                    >Игра, цель которой угадать слово за отведенное количество попыток.<br />
+                    Технологии: Javascript</a
+                  >
+                </div>
+                <menu class="card__menu">
+                  <li class="card__menu-item">
+                    <a
+                      href="./hangman.html"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="card__link"
+                      >Посмотреть проект
+                    </a>
+                  </li>
+                  <li class="card__menu-item">
+                    <a
+                      href="https://github.com/DNWD843/portfolio/blob/main/src/projects/hangman.html"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="card__link"
+                      >Посмотреть код проекта
+                    </a>
+                  </li>
+                </menu>
+              </article>
+            </li>
+
+            <li class="cards__item">
+              <article class="card">
+                <h3 class="card__title">TREASURE</h3>
+                <p class="card__subtitle">Javascript, JQuery</p>
+                <div class="card__image card__image_type_treasure">
+                  <a
+                    href="./treasure.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="card__overlay"
+                    >Игра, цель которой найти "клад" за отведенное количество попыток, ориентируясь
+                    по подсказкам "горячо" - "холодно".<br />
+                    Технологии: Javascript, JQuery</a
+                  >
+                </div>
+                <menu class="card__menu">
+                  <li class="card__menu-item">
+                    <a
+                      href="./treasure.html"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="card__link"
+                      >Посмотреть проект
+                    </a>
+                  </li>
+                  <li class="card__menu-item">
+                    <a
+                      href="https://github.com/DNWD843/portfolio/blob/main/src/projects/treasure/treasure.html"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="card__link"
+                      >Посмотреть код проекта
+                    </a>
+                  </li>
+                </menu>
+              </article>
+            </li>
+
+            <li class="cards__item">
+              <article class="card">
+                <h3 class="card__title">PAINTER</h3>
+                <p class="card__subtitle">Javascript, JQuery, Canvas</p>
+                <div class="card__image card__image_type_painter">
+                  <a
+                    href="./painter.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="card__overlay"
+                    >Простая рисовалка.<br />
+                    Технологии: Javascript, JQuery, Canvas</a
+                  >
+                </div>
+                <menu class="card__menu">
+                  <li class="card__menu-item">
+                    <a
+                      href="./painter.html"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="card__link"
+                      >Посмотреть проект
+                    </a>
+                  </li>
+                  <li class="card__menu-item">
+                    <a
+                      href="https://github.com/DNWD843/portfolio/blob/main/src/projects/painter.html"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="card__link"
+                      >Посмотреть код проекта
+                    </a>
+                  </li>
+                </menu>
+              </article>
+            </li>
+
+            <li class="cards__item">
+              <article class="card">
+                <h3 class="card__title">SNAKE</h3>
+                <p class="card__subtitle">Javascript, JQuery, Canvas</p>
+                <div class="card__image card__image_type_snake">
+                  <a
+                    href="./snake.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="card__overlay"
+                    >Игра "Змейка". Цель игры - "съесть" как можно больше яблок. Постепенно
+                    увеличивается длина змейки и скорость ее передвижения. Если змейка укусит саму
+                    себя или врежется в стену - конец игры.<br />
+                    Технологии: Javascript, JQuery, Canvas</a
+                  >
+                </div>
+                <menu class="card__menu">
+                  <li class="card__menu-item">
+                    <a
+                      href="./snake.html"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="card__link"
+                      >Посмотреть проект
+                    </a>
+                  </li>
+                  <li class="card__menu-item">
+                    <a
+                      href="https://github.com/DNWD843/portfolio/blob/main/src/projects/snake.html"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="card__link"
+                      >Посмотреть код проекта
+                    </a>
+                  </li>
+                </menu>
+              </article>
+            </li>
+
+            <li class="cards__item">
+              <article class="card">
+                <h3 class="card__title">BALL & BLOCKS</h3>
+                <p class="card__subtitle">Javascript, JQuery, Canvas</p>
+                <div class="card__image card__image_type_ball-blocks">
+                  <a
+                    href="./ballAndBlocks.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="card__overlay"
+                    >Игра BALL&BLOCKS. Цель - разбить все блоки шариком, отбивая шарик битой. Синие
+                    блоки изменяют длину биты в большую или меньшую сторону. Всего в игре два
+                    раунда. Количество попыток ограничено.<br />Технологии: Javascript, JQuery,
+                    Canvas</a
+                  >
+                </div>
+                <menu class="card__menu">
+                  <li class="card__menu-item">
+                    <a
+                      href="./ballAndBlocks.html"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="card__link"
+                      >Посмотреть проект
+                    </a>
+                  </li>
+                  <li class="card__menu-item">
+                    <a
+                      href="https://github.com/DNWD843/portfolio/blob/main/src/projects/BALL_BLOCKS.html"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="card__link"
+                      >Посмотреть код проекта
+                    </a>
+                  </li>
+                </menu>
+              </article>
+            </li>
+
+            <li class="cards__item">
+              <article class="card">
+                <h3 class="card__title">RELEASE CARD</h3>
+                <p class="card__subtitle">HTML, CSS</p>
+                <div class="card__image card__image_type_release-card">
+                  <a
+                    href="./releaseCard.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="card__overlay"
+                    >Форма заказа карты. <br />Особенности проекта: всплывающие плейсхолдеры,
+                    валидация инпутов регулярными выражениями, стилизация выбора
+                    карточек(чекбоксы).<br />Технологии: HTML, CSS, БЭМ
+                  </a>
+                </div>
+                <menu class="card__menu">
+                  <li class="card__menu-item">
+                    <a
+                      href="./releaseCard.html"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="card__link"
+                      >Посмотреть проект
+                    </a>
+                  </li>
+                  <li class="card__menu-item">
+                    <a
+                      href="https://github.com/DNWD843/portfolio/tree/main/src/projects/release-card"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="card__link"
+                      >Посмотреть код проекта
+                    </a>
+                  </li>
+                </menu>
+              </article>
+            </li>
+          </ul>
+        </section>
+
+        <section id="practicum" class="content__section">
+          <h2 class="content__title">Яндекс.Практикум</h2>
+          <ul class="cards content__cards">
+            <li class="cards__item">
+              <article class="card">
+                <h3 class="card__title">FOUR RULES</h3>
+                <p class="card__subtitle">landing: HTML, CSS</p>
+                <div class="card__image card__image_type_four-rules">
+                  <a
+                    href="./fourRules.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="card__overlay"
+                    >Небольшой лендинг, рассказывающий про основные правила верстки.<br />Технологии:
+                    HTML, CSS</a
+                  >
+                </div>
+                <menu class="card__menu">
+                  <li class="card__menu-item">
+                    <a
+                      href="./fourRules.html"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="card__link"
+                      >Посмотреть проект
+                    </a>
+                  </li>
+                  <li class="card__menu-item">
+                    <a
+                      href="https://github.com/DNWD843/portfolio/tree/main/src/projects/FOUR_RULES"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="card__link"
+                      >Посмотреть код проекта
+                    </a>
+                  </li>
+                </menu>
+              </article>
+            </li>
+            <li class="cards__item">
+              <article class="card">
+                <h3 class="card__title">HOW TO LEARN</h3>
+                <p class="card__subtitle">landing: HTML, CSS, CSS-animations, flexbox</p>
+                <div class="card__image card__image_type_how-to-learn">
+                  <a
+                    href="https://dnwd843.github.io/how-to-learn/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="card__overlay"
+                    >Flexbox-верстка, CSS-анимации, вставлены два фрейма.<br />Технологии: HTML,
+                    CSS, flexbox, table, БЭМ.</a
+                  >
+                </div>
+                <menu class="card__menu">
+                  <li class="card__menu-item">
+                    <a
+                      href="https://dnwd843.github.io/how-to-learn/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="card__link"
+                      >Посмотреть проект
+                    </a>
+                  </li>
+                  <li class="card__menu-item">
+                    <a
+                      href="https://github.com/DNWD843/how-to-learn"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="card__link"
+                      >Посмотреть код проекта
+                    </a>
+                  </li>
+                </menu>
+              </article>
+            </li>
+            <li class="cards__item">
+              <article class="card">
+                <h3 class="card__title">RUSSIAN TRAVEL</h3>
+                <p class="card__subtitle">landing: HTML, CSS, flexbox, grid-layout</p>
+                <div class="card__image card__image_type_russian-travel">
+                  <a
+                    href="https://dnwd843.github.io/russian-travel/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="card__overlay"
+                    >В этом проекте применяются две технологии верстки: flexbox и grid-layout.
+                    <br />Технологии: HTML, CSS, flexbox, grid-layout, БЭМ
+                  </a>
+                </div>
+                <menu class="card__menu">
+                  <li class="card__menu-item">
+                    <a
+                      href="https://dnwd843.github.io/russian-travel/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="card__link"
+                      >Посмотреть проект
+                    </a>
+                  </li>
+                  <li class="card__menu-item">
+                    <a
+                      href="https://github.com/DNWD843/russian-travel"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="card__link"
+                      >Посмотреть код проекта
+                    </a>
+                  </li>
+                </menu>
+              </article>
+            </li>
+            <li class="cards__item">
+              <article class="card">
+                <h3 class="card__title">MESTO JS</h3>
+                <p class="card__subtitle">frontend</p>
+                <div class="card__image card__image_type_mesto-js">
+                  <a
+                    href="https://dnwd843.github.io/mesto/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="card__overlay"
+                    >Фронтенд проекта MESTO, выполненный на нативном JS. Особенности проекта:
+                    всплывающие окна, валидация форм нативным JS, возможность добавлять, удалять,
+                    лайкать карточки, сборка проекта - webpack, AJAX, адаптив. <br />Технологии:
+                    HTML, CSS, Javascript, webpack, БЭМ</a
+                  >
+                </div>
+                <menu class="card__menu">
+                  <li class="card__menu-item">
+                    <a
+                      href="https://dnwd843.github.io/mesto/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="card__link"
+                      >Посмотреть проект
+                    </a>
+                  </li>
+                  <li class="card__menu-item">
+                    <a
+                      href="https://github.com/DNWD843/mesto"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="card__link"
+                      >Посмотреть код проекта
+                    </a>
+                  </li>
+                </menu>
+              </article>
+            </li>
+            <li class="cards__item">
+              <article class="card">
+                <h3 class="card__title">MESTO REACT</h3>
+                <p class="card__subtitle">SPA: frontend + backend</p>
+                <div class="card__image card__image_type_mesto-react">
+                  <a
+                    href="https://linuxoid.students.nomoreparties.xyz"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="card__overlay"
+                    >Особенности проекта: на одном из этапов валидация форм библиотекой Formik,
+                    авторизация пользователя, JWT token, хранение токена в LocalStorage, AJAX,
+                    адаптив.<br />
+                    Технологии:
+                    <br />фронтенд: ReactJS, валидация форм пользовательским хуком, БЭМ, CRA
+                    <br />бэкенд: NodeJS, Express, MongoDB, Joi/celebrate</a
+                  >
+                </div>
+                <menu class="card__menu">
+                  <li class="card__menu-item">
+                    <a
+                      href="https://linuxoid.students.nomoreparties.xyz"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="card__link"
+                      >Посмотреть проект</a
+                    >
+                  </li>
+                  <li class="card__menu-item">
+                    <a
+                      href="https://github.com/DNWD843/react-mesto-api-full"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="card__link"
+                      >Посмотреть код проекта</a
+                    >
+                  </li>
+                </menu>
+              </article>
+            </li>
+
+            <li class="cards__item">
+              <article class="card">
+                <h3 class="card__title">NEWS-EXPLORER</h3>
+                <p class="card__subtitle">SPA: frontend + backend</p>
+                <div class="card__image card__image_type_news-explorer">
+                  <a
+                    href="https://truthseeker.students.nomoreparties.xyz"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="card__overlay"
+                    >Поисковик. Особенности проекта: авторизация пользователя, JWT token, работа с
+                    LocalStorage, сохранение статей, просмотр сохраненных статей, внешний API, AJAX,
+                    адаптив. Технологии: <br />фронтенд: ReactJS, валидация форм пользовательским
+                    хуком, БЭМ, CRA <br />бэкенд: NodeJS, Express, MongoDB, Joi/celebrate</a
+                  >
+                </div>
+                <menu class="card__menu">
+                  <li class="card__menu-item">
+                    <a
+                      href="https://truthseeker.students.nomoreparties.xyz"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="card__link"
+                      >Посмотреть проект</a
+                    >
+                  </li>
+                  <li class="card__menu-item">
+                    <a
+                      href="https://github.com/DNWD843/news-explorer-full/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="card__link"
+                      >Посмотреть код проекта</a
+                    >
+                  </li>
+                </menu>
+              </article>
+            </li>
+          </ul>
+        </section>
+
+        <section id="testworks" class="content__section">
+          <h2 class="content__title">Тестовые задания</h2>
+          <ul class="cards content__cards">
+            <li class="cards__item">
+              <article class="card">
+                <h3 class="card__title">SoccerStat</h3>
+                <p class="card__subtitle">SPA: frontend</p>
+                <div class="card__image card__image_type_soccer-stat">
+                  <a
+                    href="https://dnwd843.github.io/soccer-stat/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="card__overlay"
+                    >Приложение просмотра футбольной статистики по европейским турнирам и
+                    командам.<br />Особенности: <br />выбор/поиск турнира/команды, просмотр по
+                    сезонам/месяцам/периодам, параметры запросов в роутах, внешний API, адаптив<br />
+                    Технологии: ReactJS, CRA, AJAX
+                  </a>
+                </div>
+                <menu class="card__menu">
+                  <li class="card__menu-item">
+                    <a
+                      href="https://dnwd843.github.io/soccer-stat/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="card__link"
+                      >Посмотреть проект
+                    </a>
+                  </li>
+                  <li class="card__menu-item">
+                    <a
+                      href="https://github.com/dnwd843/soccer-stat/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="card__link"
+                      >Посмотреть код проекта
+                    </a>
+                  </li>
+                </menu>
+              </article>
+            </li>
+
+            <li class="cards__item">
+              <article class="card">
+                <h3 class="card__title">Register Form</h3>
+                <p class="card__subtitle">modal window</p>
+                <div class="card__image card__image_type_register-form">
+                  <a
+                    href="https://dnwd843.github.io/register-form/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="card__overlay"
+                    >Форма регистрации пользователя. Особенности:<br />
+                    стилизация чекбокса и выпадающего списка, валидация инпутов пользовательским
+                    хуком, резиновая верстка.
+                    <br />Технологии: ReactJS, CRA</a
+                  >
+                </div>
+                <menu class="card__menu">
+                  <li class="card__menu-item">
+                    <a
+                      href="https://dnwd843.github.io/register-form/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="card__link"
+                      >Посмотреть проект
+                    </a>
+                  </li>
+                  <li class="card__menu-item">
+                    <a
+                      href="https://github.com/dnwd843/register-form/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="card__link"
+                      >Посмотреть код проекта
+                    </a>
+                  </li>
+                </menu>
+              </article>
+            </li>
+          </ul>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <p class="footer__copyright">&copy; Dmitry Neklyudov, 2021</p>
+        <a href="#header" class="footer__link">Наверх</a>
+        <ul class="footer__menu">
+          <li class="footer__menu-item">
+            <a
+              href="https://github.com/dnwd843/portfolio/"
+              class="footer__link footer__link_type_social-icon footer__link_type_github"
+              target="_blank"
+              rel="noopener noreferrer"
+            ></a>
+          </li>
+          <li class="footer__menu-item">
+            <a
+              href="https://t.me/mad_damon"
+              class="footer__link footer__link_type_social-icon footer__link_type_telegram"
+              target="_blank"
+              rel="noopener noreferrer"
+            ></a>
+          </li>
+          <li class="footer__menu-item">
+            <a
+              href="https://www.linkedin.com/in/maddamon/"
+              class="footer__link footer__link_type_social-icon footer__link_type_linkedin"
+              target="_blank"
+              rel="noopener noreferrer"
+            ></a>
+          </li>
+        </ul>
+      </footer>
+
+      <div class="popup page__overlay">
+        <div class="popup__container">
+          <h2 class="popup__title">Оппа! Все хорошо, но есть нюанс! ))</h2>
+          <p class="popup__text">
+            В связи с тем, что в настоящее время я являюсь старшим студентом 25-го потока на
+            Яндекс.Практикум, я временно закрыл доступ к репозиториям с учебными и дипломным
+            проектами. Но, я с удовольствием предоставлю Вам доступ к интересующим Вас репозиториям
+            по прямому запросу! Спасибо за понимание!
+          </p>
+          <button
+            id="close-popup"
+            name="close-popup"
+            type="button"
+            class="popup__close-button"
+          ></button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
