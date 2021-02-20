@@ -3,7 +3,7 @@
 .page__container{width:100%;max-width:1440px;min-width:320px;margin:0 auto;padding:10px 0 20px;box-sizing:border-box;position:relative}
 
 .page__overlay{position:fixed;top:0;left:0;right:0;bottom:0;display:-webkit-box;display:-ms-flexbox;display:flex;justify-content:center;align-items:center}
-.page{background-color:#000;margin:0;font-family:IBM Plex Sans,Helvetica,Arial,sans-serif;font-style:normal;font-weight:400;line-height:1.15;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;-moz-text-size-adjust:100%;text-rendering:optimizeLegibility}
+.page{background-color:#141414;margin:0;font-family:IBM Plex Sans,Helvetica,Arial,sans-serif;font-style:normal;font-weight:400;line-height:1.15;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;-moz-text-size-adjust:100%;text-rendering:optimizeLegibility}
 .header__title{margin:0 0 5px;font-weight:700;font-size:38px;text-shadow:0 0 4px #fff;letter-spacing:10px}
 .header__subtitle{margin:0 0 20px;font-size:14px}
 .header{margin:0;padding:10px 0;box-sizing:border-box;box-shadow:inset 0 -1px 0 hsla(0,0%,100%,.2);color:#c8c8be;display:-webkit-box;display:-ms-flexbox;display:flex;flex-direction:column;align-items:center;justify-content:center}
@@ -39,7 +39,7 @@
 .card__menu{list-style:none;margin:0;padding:0}
 .card__menu-item{margin:0 0 10px;display:-webkit-box;display:-ms-flexbox;display:flex;justify-content:center}
 .card__link{color:rgba(200,200,190,.7);font-size:14px;text-decoration:none;outline:none}.card__link:hover{color:#c8c8be;text-shadow:0 0 3px #fff}
-.card{margin:0;padding:10px;box-sizing:border-box;box-shadow:0 0 10px #fff;border-radius:5px}
+.card{margin:0;padding:10px;box-sizing:border-box;box-shadow:0 0 10px #fff;border-radius:5px;background-color:#1e1e1e}
 .footer__copyright{color:rgba(200,200,190,.7);margin:0;font-size:16px}
 .footer__menu{margin:0 35px 0 0;padding:0;list-style:none;display:-webkit-box;display:-ms-flexbox;display:flex}
 .footer__menu-item{margin:0 40px 0 0;padding:0}.footer__menu-item:last-of-type{margin:0}
