@@ -8,6 +8,7 @@ module.exports = {
     main: './src/scripts/index.js',
     fourRules: './src/projects/FOUR_RULES/index.js',
     releaseCard: './src/projects/release-card',
+    treasure: './src/projects/treasure/treasure.js',
   },
   output: {
     path: path.resolve(__dirname, './dist/'),
@@ -43,14 +44,14 @@ module.exports = {
          затем PostCSS, затем CSS и, наконец, style-loader,
          который применяет скомпилированные стили к элементам DOM*/
       },
-      /* {
+      {
         test: /\.html$/,
         use: ['html-loader'],
-      },*/
+      },
     ],
   },
-  mode: 'development',
-  /*devServer: {
+  /*mode: 'development',
+  devServer: {
     historyApiFallback: true,
     contentBase: path.resolve(__dirname, './dist'),
     open: true,
@@ -73,6 +74,27 @@ module.exports = {
       template: './src/projects/release-card/index.html',
       filename: 'releaseCard.html',
       chunks: ['releaseCard'],
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/projects/BALL_BLOCKS.html',
+      filename: 'ballAndBlocks.html',
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/projects/hangman.html',
+      filename: 'hangman.html',
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/projects/treasure/treasure.html',
+      filename: 'treasure.html',
+      chunks: ['treasure'],
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/projects/painter.html',
+      filename: 'painter.html',
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/projects/snake.html',
+      filename: 'snake.html',
     }),
     new MiniCssExtractPlugin({
       filename: '[name].css',
