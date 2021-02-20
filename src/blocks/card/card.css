@@ -1,11 +1,26 @@
 @import url('./__title/card__title.css');
 @import url('./__subtitle/card__subtitle.css');
 @import url('./__image/card__image.css');
-@import url('./__description/card__description.css');
+
+@import url('./__image/_type/card__image_type_ball-blocks.css');
+@import url('./__image/_type/card__image_type_hangman.css');
+@import url('./__image/_type/card__image_type_painter.css');
+@import url('./__image/_type/card__image_type_snake.css');
+@import url('./__image/_type/card__image_type_treasure.css');
+@import url('./__image/_type/card__image_type_release-card.css');
+@import url('./__image/_type/card__image_type_four-rules.css');
+@import url('./__image/_type/card__image_type_how-to-learn.css');
+@import url('./__image/_type/card__image_type_russian-travel.css');
+@import url('./__image/_type/card__image_type_mesto-js.css');
+@import url('./__image/_type/card__image_type_mesto-react.css');
+@import url('./__image/_type/card__image_type_news-explorer.css');
+@import url('./__image/_type/card__image_type_soccer-stat.css');
+@import url('./__image/_type/card__image_type_register-form.css');
+@import url('./__image/_type/card__image_type_default.css');
+@import url('./__overlay/card__overlay.css');
 @import url('./__menu/card__menu.css');
 @import url('./__menu-item/card__menu-item.css');
 @import url('./__link/card__link.css');
-@import url('./__overlay/card__overlay.css');
 
 .card {
   margin: 0;
@@ -13,4 +28,5 @@
   box-sizing: border-box;
   box-shadow: 0 0 10px #fff;
   border-radius: 5px;
+  background-color: rgb(30, 30, 30);
 }
