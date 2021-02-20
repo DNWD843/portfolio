@@ -3,7 +3,7 @@
 @import url('./__overlay/page__overlay.css');
 
 .page {
-  background-color: #000;
+  background-color: rgb(20, 20, 20);
   margin: 0;
   font-family: 'IBM Plex Sans', 'Helvetica', 'Arial', sans-serif;
   font-style: normal;
