@@ -11,3 +11,17 @@
   background-color: rgba(200, 200, 190, 1);
   box-shadow: 0 0 10px #fff;
 }
+
+@media screen and (max-width: 767px) {
+  .footer__link_type_social-icon {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media screen and (max-width: 424px) {
+  .footer__link_type_social-icon {
+    width: 15px;
+    height: 15px;
+  }
+}

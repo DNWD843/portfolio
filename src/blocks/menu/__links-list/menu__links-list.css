@@ -5,4 +5,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+@media screen and (max-width: 579px) {
+  .menu__links-list {
+    max-width: 330px;
+  }
+}
+
+@media screen and (max-width: 424px) {
+  .menu__links-list {
+    max-width: 280px;
+  }
 }

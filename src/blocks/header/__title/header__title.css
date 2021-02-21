@@ -5,3 +5,16 @@
   text-shadow: 0 0 4px #fff;
   letter-spacing: 10px;
 }
+
+@media screen and (max-width: 767px) {
+  .header__title {
+    font-size: 30px;
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (max-width: 424px) {
+  .header__title {
+    font-size: 22px;
+  }
+}
