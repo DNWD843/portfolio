@@ -8,3 +8,15 @@
   color: rgba(200, 200, 190, 1);
   text-shadow: 0 0 2px #fff;
 }
+
+@media screen and (max-width: 767px) {
+  .menu__nav-link {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 424px) {
+  .menu__nav-link {
+    font-size: 9px;
+  }
+}

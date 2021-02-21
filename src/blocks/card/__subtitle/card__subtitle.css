@@ -2,7 +2,22 @@
   margin: 0 0 20px;
   text-align: center;
   word-wrap: normal;
-  color: rgb(200, 200, 190);
+  /*color: rgb(200, 200, 190);*/
+  color: #000;
   font-size: 14px;
   font-weight: 400;
+}
+
+@media screen and (min-width: 580px) and (max-width: 767px) {
+  .card__subtitle {
+    font-size: 11px;
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (max-width: 424px) {
+  .card__subtitle {
+    font-size: 11px;
+    margin-bottom: 10px;
+  }
 }

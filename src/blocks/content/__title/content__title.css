@@ -7,3 +7,10 @@
   letter-spacing: 3px;
   text-shadow: 0 0 1px #fff;
 }
+
+@media screen and (max-width: 767px) {
+  .content__title {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+}
