@@ -1,16 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title> ВИСЕЛИЦА! </title>
-<script defer src="main.bundle.js"></script><script defer src="fourRules.bundle.js"></script><script defer src="releaseCard.bundle.js"></script><script defer src="treasure.bundle.js"></script><link href="main.css" rel="stylesheet"><link href="fourRules.css" rel="stylesheet"><link href="releaseCard.css" rel="stylesheet"></head>
-<body>
-<h2>  Играем в ВИСЕЛИЦУ! </h2>
-<p> <h3>Все загаданные слова отвечают на вопросы "КТО?" или "ЧТО?". </h3></p>
-<p> <h3>Для начала игры нажмите F5! </h3></p>
-<script> 
-
-//Создаем массив со словами для отгадывания
+<!doctype html><html><head><meta charset="UTF-8"><title>ВИСЕЛИЦА!</title><script defer="defer" src="main.bundle.js"></script><script defer="defer" src="fourRules.bundle.js"></script><script defer="defer" src="releaseCard.bundle.js"></script><script defer="defer" src="treasure.bundle.js"></script><script defer="defer" src="howToLearn.bundle.js"></script><script defer="defer" src="russianTravel.bundle.js"></script><script defer="defer" src="mesto.bundle.js"></script><link href="main.css" rel="stylesheet"><link href="fourRules.css" rel="stylesheet"><link href="releaseCard.css" rel="stylesheet"><link href="howToLearn.css" rel="stylesheet"><link href="russianTravel.css" rel="stylesheet"><link href="mesto.css" rel="stylesheet"></head><body><h2>Играем в ВИСЕЛИЦУ!</h2><p></p><h3>Все загаданные слова отвечают на вопросы "КТО?" или "ЧТО?".</h3><p></p><p></p><h3>Для начала игры нажмите F5!</h3><p></p><script>//Создаем массив со словами для отгадывания
 var words=[
 "программа",
 "макака",
@@ -133,10 +121,4 @@ while (remainingLetters > 0&&steps>0) {
 			remainingLetters -= correctGuesses;
 			}
 }
-	showAnswerAndCongratulatePlayer(answerArray);
-
-</script>
-
-
-</body>
-</html>
+	showAnswerAndCongratulatePlayer(answerArray);</script></body></html>
