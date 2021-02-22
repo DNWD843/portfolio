@@ -9,6 +9,7 @@ module.exports = {
     fourRules: './src/projects/FOUR_RULES/index.js',
     releaseCard: './src/projects/release-card',
     treasure: './src/projects/treasure/treasure.js',
+    howToLearn: './src/projects/howToLearn',
   },
   output: {
     path: path.resolve(__dirname, './dist/'),
@@ -43,10 +44,6 @@ module.exports = {
         так что последним должен быть sass-loader(если его установили и используем),
          затем PostCSS, затем CSS и, наконец, style-loader,
          который применяет скомпилированные стили к элементам DOM*/
-      },
-      {
-        test: /\.html$/,
-        use: ['html-loader'],
       },
     ],
   },
@@ -95,6 +92,11 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/projects/snake.html',
       filename: 'snake.html',
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/projects/howToLearn/index.html',
+      filename: 'howToLearn.html',
+      chunks: ['howToLearn'],
     }),
     new MiniCssExtractPlugin({
       filename: '[name].css',

@@ -1,0 +1,8 @@
+.two-columns__main-text {
+  /*border: 1px solid orange;*/
+  width: 79.4%;
+  min-width: 784px;
+  line-height: 34px;
+  font-size: 24px;
+  font-weight: normal;
+}
