@@ -11,6 +11,7 @@ module.exports = {
     treasure: './src/projects/treasure/treasure.js',
     howToLearn: './src/projects/howToLearn',
     russianTravel: './src/projects/russianTravel',
+    mesto: './src/projects/mesto/src/scripts/index.js',
   },
   output: {
     path: path.resolve(__dirname, './dist/'),
@@ -103,6 +104,12 @@ module.exports = {
       template: './src/projects/russianTravel/index.html',
       filename: 'russianTravel.html',
       chunks: ['russianTravel'],
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/projects/mesto/src/index.html',
+      filename: 'mesto.html',
+      chunks: ['mesto'],
+      src: './images/headerLogo.svg',
     }),
     new MiniCssExtractPlugin({
       filename: '[name].css',
