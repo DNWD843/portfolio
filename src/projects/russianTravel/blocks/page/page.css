@@ -1,0 +1,16 @@
+.page {
+  min-width: 320px;
+  max-width: 1280px;
+  font-family: 'Inter', 'Arial', sans-serif;
+  margin: 0 auto;
+  background-color: #2a2c2f;
+  /*   сглаживание шрифтов в Firefox и браузерах на движке Webkit (Яндекс.Браузер, Google Chrome, Opera, Safari)  */
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  /*  масштабирования шрифтов   */
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  /*  кернинг   */
+  text-rendering: optimizeLegibility;
+}

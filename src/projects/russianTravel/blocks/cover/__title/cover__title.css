@@ -1,0 +1,30 @@
+.cover__title {
+  max-width: 560px;
+  font-family: inherit;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 72px;
+  line-height: 1.06;
+  /* or 106% */
+  text-align: center;
+  color: #FFFFFF;
+  margin: 0 0 32px;
+}
+
+@media all and (max-width: 600px) {
+  .cover__title {
+    font-size: 12vw;
+    max-width: 90%;
+  }
+}
+
+@media all and (max-width: 425px) {
+  .cover__title {
+    max-width: 270px;
+    font-size: 32px;
+    line-height: 1.09;
+    margin-bottom: 16px;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+}

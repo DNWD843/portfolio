@@ -1,0 +1,5 @@
+.footer__column_content_info {
+  /*border: 1px solid grey;*/
+  margin: 0;
+  flex-direction: column;
+}

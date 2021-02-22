@@ -1,0 +1,27 @@
+@import url(./__title/lead__title.css);
+@import url(./__subtitle/lead__subtitle.css);
+@import url(./__illustration/lead__illustration.css);
+@import url(./__image/lead__image.css);
+@import url(./__caption/lead__caption.css);
+.lead {
+  padding-top: 56px;
+  /* отступ от header  */
+  max-width: 984px;
+  width: 90.625%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+@media all and (max-width: 1024px) {
+  .lead {
+    max-width: 928px;
+    padding-top: 48px;
+  }
+}
+
+@media all and (max-width: 768px) {
+  .lead {
+    width: 100%;
+  }
+}
