@@ -7,4 +7,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  opacity: 0;
+  transition: opacity ease-in-out 0.35s;
 }

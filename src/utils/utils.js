@@ -2,10 +2,16 @@ import { privateLinksList, popupElement, popupCloseButton } from '../constants/c
 
 const openPopup = () => {
   popupElement.classList.add('popup_opened');
+  setTimeout(() => {
+    popupElement.classList.add('popup_appearing');
+  }, 10);
 };
 
 const closePopup = () => {
-  popupElement.classList.remove('popup_opened');
+  popupElement.classList.remove('popup_appearing');
+  setTimeout(() => {
+    popupElement.classList.remove('popup_opened');
+  }, 360);
 };
 
 const handleClickOnOverlay = (evt) => {
