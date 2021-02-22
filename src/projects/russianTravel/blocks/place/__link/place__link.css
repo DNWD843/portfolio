@@ -1,0 +1,20 @@
+.place__link {
+  max-width: 456px;
+  font-family: inherit;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.22;
+  /* identical to box height, or 122% */
+  text-decoration-line: underline;
+  text-underline-position: under;
+  color: #FFFFFF;
+  margin: 0;
+  transition: opacity .2s linear;
+  align-self: flex-start;
+}
+
+.place__link:hover {
+  opacity: .8;
+  cursor: pointer;
+}

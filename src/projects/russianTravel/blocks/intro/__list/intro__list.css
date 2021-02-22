@@ -1,0 +1,13 @@
+.intro__list {
+  width: 100%;
+  font-family: inherit;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1.5;
+  /* or 150% */
+  color: #FFFFFF;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}

@@ -10,6 +10,7 @@ module.exports = {
     releaseCard: './src/projects/release-card',
     treasure: './src/projects/treasure/treasure.js',
     howToLearn: './src/projects/howToLearn',
+    russianTravel: './src/projects/russianTravel',
   },
   output: {
     path: path.resolve(__dirname, './dist/'),
@@ -97,6 +98,11 @@ module.exports = {
       template: './src/projects/howToLearn/index.html',
       filename: 'howToLearn.html',
       chunks: ['howToLearn'],
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/projects/russianTravel/index.html',
+      filename: 'russianTravel.html',
+      chunks: ['russianTravel'],
     }),
     new MiniCssExtractPlugin({
       filename: '[name].css',

@@ -1,0 +1,25 @@
+.lead__caption {
+  max-width: 159px;
+  margin: 0;
+  font-family: inherit;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 1.4;
+  /* identical to box height, or 140% */
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+
+@media all and (max-width: 768px) {
+  .lead__caption {
+    margin-left: 24px;
+  }
+}
+
+@media all and (max-width:425px) {
+  .lead__caption {
+    margin-left: 16px;
+  }
+}

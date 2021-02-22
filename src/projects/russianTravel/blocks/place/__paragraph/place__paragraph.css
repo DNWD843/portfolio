@@ -1,0 +1,26 @@
+.place__paragraph {
+  width: 100%;
+  font-family: inherit;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.67;
+  /* or 167% */
+  color: #FFFFFF;
+  margin: 0;
+}
+
+@media all and (max-width: 768px) {
+  .place__paragraph {
+    font-size: 16px;
+    line-height: 1.62;
+  }
+}
+
+@media all and (max-width: 425px) {
+  .place__paragraph {
+    max-width: 288px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
