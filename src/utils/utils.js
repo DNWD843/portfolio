@@ -1,4 +1,4 @@
-import { privateLinksList, popupElement, popupCloseButton } from '../constants/constants';
+import { privateLinksList, popupElement, popupCloseButton } from '../scripts/constants/constants';
 
 const openPopup = () => {
   popupElement.classList.add('popup_opened');
