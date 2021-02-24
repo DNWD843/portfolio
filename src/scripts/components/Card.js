@@ -1,21 +1,11 @@
 export class Card {
-  constructor({
-    title,
-    subtitle,
-    image,
-    cardLinkText,
-    pathToProject,
-    pathToCode,
-    cardLinkId,
-    overlayText,
-    cardSelectorsList,
-    cardTemplateSelector,
-    cardSelector,
-  }) {
+  constructor(
+    { title, subtitle, image, pathToProject, pathToCode, cardLinkId, overlayText },
+    { cardTemplateSelector, cardSelector, ...cardSelectorsList },
+  ) {
     this._title = title;
     this._subtitle = subtitle;
     this._image = image;
-    this._cardLinkText = cardLinkText;
     this._pathToProject = pathToProject;
     this._overlayText = overlayText;
     this._pathToCode = pathToCode;
@@ -52,7 +42,7 @@ export class Card {
     this._overlay.textContent = this._overlayText;
     this._cardLink.setAttribute('id', this._cardLinkId);
     this._cardLink.setAttribute('href', this._pathToCode);
-    this._cardLink.textContent = this._cardLinkText;
+
     return this._cardElement;
   }
 }

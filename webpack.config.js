@@ -47,10 +47,6 @@ module.exports = {
          затем PostCSS, затем CSS и, наконец, style-loader,
          который применяет скомпилированные стили к элементам DOM*/
       },
-      {
-        test: /\.html$/,
-        use: [{ loader: 'html-loader' }],
-      },
     ],
   },
   /*mode: 'development',

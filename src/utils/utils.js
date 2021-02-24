@@ -1,4 +1,4 @@
-import { privateLinksList, popupElement, popupCloseButton } from '../scripts/constants/constants';
+import { popupElement, popupCloseButton } from '../scripts/constants/constants';
 
 const openPopup = () => {
   popupElement.classList.add('popup_opened');
@@ -21,6 +21,7 @@ const handleClickOnOverlay = (evt) => {
 };
 
 export const changeAttributesByPrivateLinks = () => {
+  const privateLinksList = document.querySelectorAll('#private');
   privateLinksList.forEach((privateLink) => {
     privateLink.setAttribute('href', '#practicum');
     privateLink.removeAttribute('target');
@@ -28,6 +29,7 @@ export const changeAttributesByPrivateLinks = () => {
 };
 
 export const setEventListeners = () => {
+  const privateLinksList = document.querySelectorAll('#private');
   privateLinksList.forEach((privateLink) => {
     privateLink.addEventListener('click', openPopup);
   });
