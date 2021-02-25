@@ -7,7 +7,7 @@ module.exports = {
     cssnano({ preset: 'default' }),
     {
       'postcss-preset-env': {
-        browsers: 'last 2 versions',
+        browsers: 'last 4 versions',
       },
     },
   ],
