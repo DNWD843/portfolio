@@ -42,7 +42,6 @@ export class Card {
       .querySelector(this._cardTemplateSelector)
       .content.querySelector(this._cardSelector)
       .cloneNode(true);
-    console.log(cardElement);
     return cardElement;
   };
 
