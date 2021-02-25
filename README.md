@@ -1,6 +1,6 @@
 _Портфолио_
 
-version: 1.1.0  
+version: 2.0.0  
 author: Dmitry Neklyudov
 
 **Используемые технологии**
@@ -21,6 +21,9 @@ author: Dmitry Neklyudov
 откройте файл index.html в браузере_**
 
 **Описание версий**  
+**_Версия 2.0.0_**  
+Функционал реализован на JS. Написаны комментарии JSDoc3.
+
 **_Версия 1.1.0_**  
 Адаптив.
 
@@ -28,9 +31,7 @@ author: Dmitry Neklyudov
 Портфолио написано на HTML, CSS, без использования JS.
 
 **Что предстоит сделать**  
-Написать функционал на JS с использованием классов.  
-Добавить комментарии JSdoc.
-Наполнять контентом ))
+Наполнять новыми проектами ))
 
 **Посмотреть проект**  
-Посмотреть портфолио можно <a href="https://dnwd843.github.io/portfolio/" target="_blank" rel="noreferrer noopener">ТУТ</a>
+Посмотреть портфолио можно <a href="https://portfolio.students.nomoreparties.space/" target="_blank" rel="noreferrer noopener">ТУТ</a>

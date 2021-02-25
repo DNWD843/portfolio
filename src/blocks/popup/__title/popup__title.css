@@ -6,13 +6,13 @@
 
 @media screen and (max-width: 769px) {
   .popup__title {
-    font-size: 14px;
+    font-size: 16px;
     margin-bottom: 10px;
   }
 }
 @media screen and (max-width: 424px) {
   .popup__title {
-    font-size: 11px;
+    font-size: 14px;
     margin-bottom: 5px;
   }
 }
