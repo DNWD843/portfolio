@@ -1,6 +1,6 @@
 {
   "name": "portfolio",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "description": "my portfolio",
   "main": "index.js",
   "scripts": {
@@ -9,7 +9,7 @@
     "predeploy": "npm run build",
     "deploy": "scp -r ./dist/* express@84.201.177.57:/home/express/portfolio",
     "gh-deploy": "gh-pages -d dist",
-    "jsdoc:build": "jsdoc ./src/scripts/ ./src/scripts/components/ ./src/scripts/constants/ ./README.md -d ./documentation"
+    "jsdoc:build": "jsdoc ./src/scripts/ ./src/scripts/components/ ./README.md -d ./documentation"
   },
   "author": "Dmitry Neklyudov",
   "license": "ISC",
