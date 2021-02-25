@@ -1,18 +1,22 @@
 import '../pages/index.css';
-import { changeAttributesByPrivateLinks, setEventListeners } from '../utils/utils';
 import { Card } from './components/Card';
+import { Popup } from './components/Popup';
 import { CONTENT } from './constants/mocks';
-import { CONFIG as config } from './constants/constants.js';
+import * as CONFIG from './constants/configs.js';
 
-function createCard(cardData) {
-  const cardNode = new Card(cardData, config);
+const popup = new Popup(CONFIG.FOR_POPUP);
+
+function createCard(cardData, config, openPopupCallback) {
+  const cardNode = new Card(cardData, config, openPopupCallback);
   const cardWithData = cardNode.generateCard();
   return cardWithData;
 }
 
 const renderCards = ({ container, cards }) => {
   cards.forEach((card) => {
-    const cardToRender = createCard(card);
+    const cardToRender = createCard(card, CONFIG.FOR_CARD, () => {
+      popup.open();
+    });
     container.append(cardToRender);
   });
 };
@@ -21,5 +25,4 @@ CONTENT.forEach((sectionData) => {
   renderCards(sectionData);
 });
 
-changeAttributesByPrivateLinks();
-setEventListeners();
+popup.render();

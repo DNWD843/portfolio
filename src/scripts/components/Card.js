@@ -2,6 +2,7 @@ export class Card {
   constructor(
     { title, subtitle, image, pathToProject, pathToCode, cardLinkId, overlayText },
     { cardTemplateSelector, cardSelector, ...cardSelectorsList },
+    openPopupCallback,
   ) {
     this._title = title;
     this._subtitle = subtitle;
@@ -17,6 +18,7 @@ export class Card {
     this._linkSelector = cardSelectorsList.linkSelector;
     this._cardTemplateSelector = cardTemplateSelector;
     this._cardSelector = cardSelector;
+    this._openPopupCallback = openPopupCallback;
   }
 
   _getTemplate() {
@@ -27,6 +29,29 @@ export class Card {
     console.log(cardElement);
     return cardElement;
   }
+
+  _detectPrivateLink = () => {
+    if (this._cardLinkId === 'private') {
+      this._privateLink = this._cardLink;
+    } else this._privateLink = null;
+  };
+
+  _setLinkAttributes = () => {
+    if (this._privateLink) {
+      this._privateLink.setAttribute('href', '#practicum');
+      this._privateLink.removeAttribute('target');
+    } else {
+      this._cardLink.setAttribute('href', this._pathToCode);
+    }
+    this._cardLink.setAttribute('id', this._cardLinkId);
+  };
+
+  _setEventListeners = () => {
+    this._privateLink &&
+      this._privateLink.addEventListener('click', () => {
+        this._openPopupCallback();
+      });
+  };
 
   generateCard() {
     this._cardElement = this._getTemplate();
@@ -40,9 +65,9 @@ export class Card {
     this._cardImage.style.backgroundImage = `url(${this._image}`;
     this._overlay.setAttribute('href', this._pathToProject);
     this._overlay.textContent = this._overlayText;
-    this._cardLink.setAttribute('id', this._cardLinkId);
-    this._cardLink.setAttribute('href', this._pathToCode);
-
+    this._detectPrivateLink();
+    this._setLinkAttributes();
+    this._setEventListeners();
     return this._cardElement;
   }
 }
