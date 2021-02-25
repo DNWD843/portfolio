@@ -1,8 +1,7 @@
 import '../pages/index.css';
 import { changeAttributesByPrivateLinks, setEventListeners } from '../utils/utils';
 import { Card } from './components/Card';
-import { beginnerContainer, practicumContainer, testWorksContainer } from './constants/constants';
-import { beginnerDataArr, practicumDataArr, testWorksDataArr } from './constants/mocks';
+import { CONTENT } from './constants/mocks';
 import { CONFIG as config } from './constants/constants.js';
 
 function createCard(cardData) {
@@ -11,15 +10,16 @@ function createCard(cardData) {
   return cardWithData;
 }
 
-const renderCards = (container, cards) => {
+const renderCards = ({ container, cards }) => {
   cards.forEach((card) => {
     const cardToRender = createCard(card);
     container.append(cardToRender);
   });
 };
-renderCards(beginnerContainer, beginnerDataArr);
-renderCards(practicumContainer, practicumDataArr);
-renderCards(testWorksContainer, testWorksDataArr);
+
+CONTENT.forEach((sectionData) => {
+  renderCards(sectionData);
+});
 
 changeAttributesByPrivateLinks();
 setEventListeners();

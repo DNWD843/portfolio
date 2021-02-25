@@ -13,7 +13,11 @@ import newsExplorer from '../../images/news-explorer.png';
 import soccerStat from '../../images/soccer-stat.png';
 import registerForm from '../../images/register-form.png';
 
-export const beginnerDataArr = [
+const beginnerContainer = document.querySelector('#beginner .cards');
+const practicumContainer = document.querySelector('#practicum .cards');
+const testWorksContainer = document.querySelector('#testworks .cards');
+
+const beginnerDataArr = [
   {
     title: 'HANGMAN',
     subtitle: 'Javascript',
@@ -80,7 +84,7 @@ export const beginnerDataArr = [
   },
 ];
 
-export const practicumDataArr = [
+const practicumDataArr = [
   {
     title: 'FOUR RULES',
     subtitle: 'landing: HTML, CSS',
@@ -148,7 +152,7 @@ export const practicumDataArr = [
   },
 ];
 
-export const testWorksDataArr = [
+const testWorksDataArr = [
   {
     title: 'SOCCER STAT',
     subtitle: 'SPA: frontend',
@@ -172,5 +176,20 @@ export const testWorksDataArr = [
                     стилизация чекбокса и выпадающего списка, валидация инпутов пользовательским
                     хуком, резиновая верстка.
                     Технологии: ReactJS, CRA`,
+  },
+];
+
+export const CONTENT = [
+  {
+    container: beginnerContainer,
+    cards: beginnerDataArr,
+  },
+  {
+    container: practicumContainer,
+    cards: practicumDataArr,
+  },
+  {
+    container: testWorksContainer,
+    cards: testWorksDataArr,
   },
 ];

@@ -9,7 +9,3 @@ export const CONFIG = {
   cardTemplateSelector: '#card-template',
   cardSelector: '.cards__item',
 };
-
-export const beginnerContainer = document.querySelector('#beginner .cards');
-export const practicumContainer = document.querySelector('#practicum .cards');
-export const testWorksContainer = document.querySelector('#testworks .cards');
