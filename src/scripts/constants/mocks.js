@@ -100,7 +100,7 @@ const practicumDataArr = [
     image: howToLearn,
     pathToProject: './howToLearn.html',
     pathToCode: 'https://github.com/DNWD843/how-to-learn',
-    cardLinkId: 'private',
+    cardLinkId: 'public',
     overlayText: `Flexbox-верстка, CSS-анимации, вставлены два фрейма. Технологии: HTML,
                     CSS, flexbox, table, БЭМ.`,
   },
@@ -110,7 +110,7 @@ const practicumDataArr = [
     image: russianTravel,
     pathToProject: './russianTravel.html',
     pathToCode: 'https://github.com/DNWD843/russian-travel',
-    cardLinkId: 'private',
+    cardLinkId: 'public',
     overlayText: `В этом проекте применяются две технологии верстки: flexbox и grid-layout.
                     Технологии: HTML, CSS, flexbox, grid-layout, БЭМ`,
   },
@@ -120,7 +120,7 @@ const practicumDataArr = [
     image: mestoJS,
     pathToProject: './mesto.html',
     pathToCode: 'https://github.com/DNWD843/mesto',
-    cardLinkId: 'private',
+    cardLinkId: 'public',
     overlayText: `Фронтенд проекта MESTO, выполненный на нативном JS. Особенности проекта:
                     всплывающие окна, валидация форм нативным JS, возможность добавлять, удалять,
                     лайкать карточки, сборка проекта - webpack, AJAX, адаптив. Технологии:
@@ -132,7 +132,7 @@ const practicumDataArr = [
     image: mestoReact,
     pathToProject: 'https://linuxoid.students.nomoreparties.xyz',
     pathToCode: 'https://github.com/DNWD843/react-mesto-api-full',
-    cardLinkId: 'private',
+    cardLinkId: 'public',
     overlayText: `Особенности проекта: авторизация пользователя, JWT token, хранение токена в LocalStorage, AJAX, адаптив.
                     Технологии:
                    фронтенд: ReactJS, валидация форм пользовательским хуком, БЭМ, CRA
@@ -144,7 +144,7 @@ const practicumDataArr = [
     image: newsExplorer,
     pathToProject: 'https://truthseeker.students.nomoreparties.xyz',
     pathToCode: 'https://github.com/DNWD843/news-explorer-full/',
-    cardLinkId: 'private',
+    cardLinkId: 'public',
     overlayText: `Поисковик. Особенности проекта: авторизация пользователя, JWT token, работа с
                     LocalStorage, сохранение статей, просмотр сохраненных статей, внешний API, AJAX,
                     адаптив. Технологии: фронтенд: ReactJS, валидация форм пользовательским
