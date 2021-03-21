@@ -12,6 +12,7 @@ import mestoReact from '../../images/mesto-react-full.png';
 import newsExplorer from '../../images/news-explorer.png';
 import soccerStat from '../../images/soccer-stat.png';
 import registerForm from '../../images/register-form.png';
+import calculatorReact from '../../images/calculatorReact.png';
 
 const beginnerContainer = document.querySelector('#beginner .cards');
 const practicumContainer = document.querySelector('#practicum .cards');
@@ -176,6 +177,18 @@ const testWorksDataArr = [
                     стилизация чекбокса и выпадающего списка, валидация инпутов пользовательским
                     хуком, резиновая верстка.
                     Технологии: ReactJS, CRA`,
+  },
+  {
+    title: 'CALCULATOR-REACT',
+    subtitle: 'react-app',
+    image: calculatorReact,
+    pathToProject: 'https://dnwd843.github.io/calculator/',
+    pathToCode: 'https://github.com/DNWD843/calculator/',
+    cardLinkId: 'public',
+    overlayText: `Простой калькулятор. Вычисляет простые арифметические выражения, тригонометрические
+                    функции, квадратный корень. Особенности:
+                    пользовательский хук, резиновая верстка.
+                    Технологии: Flexbox, Grid-layout, ReactJS, CRA`,
   },
 ];
 
