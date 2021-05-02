@@ -13,10 +13,12 @@ import newsExplorer from '../../images/news-explorer.png';
 import soccerStat from '../../images/soccer-stat.png';
 import registerForm from '../../images/register-form.png';
 import calculatorReact from '../../images/calculatorReact.png';
+import todoListReact from '../../images/todoListReact.png';
 
 const beginnerContainer = document.querySelector('#beginner .cards');
 const practicumContainer = document.querySelector('#practicum .cards');
 const testWorksContainer = document.querySelector('#testworks .cards');
+const projectsContainer = document.querySelector('#projects .cards');
 
 const beginnerDataArr = [
   {
@@ -192,6 +194,19 @@ const testWorksDataArr = [
   },
 ];
 
+const projectsArr = [
+  {
+    title: 'TODOLIST REACT',
+    subtitle: 'React App, frontend',
+    image: todoListReact,
+    pathToProject: 'https://dnwd843.github.io/todo-react-bootstrap/',
+    pathToCode: 'https://github.com/DNWD843/todo-react-bootstrap',
+    cardLinkId: 'public',
+    overlayText: `Простое приложение TODOLIST. Фронтенд.
+                    Технологии: ReactJS, hooks, CRA, Bootstrap, `,
+  },
+];
+
 export const CONTENT = [
   {
     container: beginnerContainer,
@@ -204,5 +219,9 @@ export const CONTENT = [
   {
     container: testWorksContainer,
     cards: testWorksDataArr,
+  },
+  {
+    container: projectsContainer,
+    cards: projectsArr,
   },
 ];
