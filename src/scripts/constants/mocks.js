@@ -133,7 +133,7 @@ const practicumDataArr = [
     title: 'MESTO REACT',
     subtitle: 'SPA: frontend + backend',
     image: mestoReact,
-    pathToProject: 'https://instamesto.nomoredomains.icu',
+    pathToProject: 'https://github.com/DNWD843/react-mesto-api-full',
     pathToCode: 'https://github.com/DNWD843/react-mesto-api-full',
     cardLinkId: 'public',
     overlayText: `Особенности проекта: авторизация пользователя, JWT token, хранение токена в LocalStorage, AJAX, адаптив.
@@ -145,7 +145,7 @@ const practicumDataArr = [
     title: 'NEWS-EXPLORER',
     subtitle: 'SPA: frontend + backend',
     image: newsExplorer,
-    pathToProject: 'https://truthseeker.students.nomoreparties.space',
+    pathToProject: 'https://github.com/DNWD843/news-explorer-full/',
     pathToCode: 'https://github.com/DNWD843/news-explorer-full/',
     cardLinkId: 'public',
     overlayText: `Поисковик. Особенности проекта: авторизация пользователя, JWT token, работа с
